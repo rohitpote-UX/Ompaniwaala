@@ -63,12 +63,12 @@ export default function CinematicIntro() {
           />
         </div>
 
-        <div className="space-y-2">
-          <p className="text-xs font-mono tracking-[0.4em] uppercase text-nature-leaf">
+        <div className="space-y-3">
+          <p className="text-[11px] font-mono tracking-[0.4em] uppercase text-nature-leaf">
             BEYOND THE DROP
           </p>
-          <h2 className="text-2xl sm:text-3xl font-display font-light tracking-wide text-white">
-            THE PUREST ELEMENT, RE-IMAGINED.
+          <h2 className="text-2xl sm:text-4xl font-light tracking-tight text-white leading-tight">
+            The Purest Element, <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-nature-leaf">Re-Imagined.</span>
           </h2>
         </div>
 

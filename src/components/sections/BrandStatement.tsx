@@ -23,19 +23,19 @@ export default function BrandStatement() {
       <div className="container-custom relative z-10 text-center max-w-4xl mx-auto space-y-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
           <Droplet className="w-3.5 h-3.5 text-nature-leaf" />
-          <span className="text-xs font-semibold tracking-[0.25em] uppercase text-white">
+          <span className="text-[11px] font-mono font-semibold tracking-[0.25em] uppercase text-white">
             Brand Signature
           </span>
         </div>
 
-        <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
+        <h2 className="text-hero font-light tracking-tight text-white leading-[0.95]">
           PURE BY NATURE. <br />
-          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-nature-leaf">
+          <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-nature-leaf">
             TRUSTED FOR YOU.
           </span>
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-subhead text-white/80 max-w-2xl mx-auto leading-relaxed">
           From the sacred geometry of the ancient Kalash to the modern urban home in Pune, our commitment remains unyielding: bringing clarity, vitality, and dependability to every glass you pour.
         </p>
 

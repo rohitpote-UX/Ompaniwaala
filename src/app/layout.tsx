@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Cormorant_Garamond } from "next/font/google";
 import "@/styles/globals.css";
 import { generateSiteMetadata, getStructuredData } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
@@ -13,12 +13,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const playfairDisplay = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-serif",
   display: "swap",
   style: ["normal", "italic"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = generateSiteMetadata({});
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`}
+      className={`${plusJakartaSans.variable} ${cormorant.variable} scroll-smooth`}
     >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -43,7 +43,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="bg-white text-slate-800 antialiased selection:bg-ocean selection:text-white">
+      <body className="bg-white text-slate-800 antialiased selection:bg-ocean selection:text-white font-sans">
         <SmoothScrollProvider>
           <div className="flex min-h-screen flex-col relative overflow-x-hidden">
             <Navbar />
@@ -55,4 +55,3 @@ export default function RootLayout({
     </html>
   );
 }
-

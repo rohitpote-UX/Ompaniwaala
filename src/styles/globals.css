@@ -9,9 +9,9 @@
   --color-living-green: #39a96b;
   --color-ice-blue: #f4f8fc;
   
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: var(--font-sans), 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: var(--font-serif), 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
 }
 
 * {
@@ -41,7 +41,7 @@ body {
 
 /* Custom minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -72,19 +72,51 @@ body {
   padding-right: clamp(20px, 5vw, 80px);
 }
 
+/* Fluid Typography System */
+.text-hero {
+  font-size: clamp(3.2rem, 7.6vw, 6.75rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+}
+
+.text-section-title {
+  font-size: clamp(2.1rem, 4.3vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.text-subhead {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+.text-metadata {
+  font-size: clamp(0.6875rem, 0.85vw, 0.8125rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.font-editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
 /* Glassmorphism restrained utility */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .glass-panel-dark {
-  background: rgba(7, 59, 120, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(7, 59, 120, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Subtle water gradient masks */
@@ -97,4 +129,3 @@ body {
   );
   background-size: 200% 100%;
 }
-

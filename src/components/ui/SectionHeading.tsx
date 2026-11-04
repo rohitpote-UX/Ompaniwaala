@@ -37,7 +37,7 @@ export default function SectionHeading({
           <span className="w-2 h-2 rounded-full bg-nature animate-pulse-subtle" />
           <span
             className={cn(
-              "text-xs md:text-sm font-semibold tracking-[0.2em] uppercase",
+              "text-[11px] sm:text-xs font-mono font-semibold tracking-[0.25em] uppercase",
               dark ? "text-nature-leaf" : "text-nature-emerald"
             )}
           >
@@ -48,7 +48,7 @@ export default function SectionHeading({
 
       <h2
         className={cn(
-          "font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6",
+          "text-section-title font-light tracking-tight leading-[1.04] mb-5 font-display",
           dark ? "text-white" : "text-ocean"
         )}
       >
@@ -58,7 +58,7 @@ export default function SectionHeading({
       {subtitle && (
         <p
           className={cn(
-            "text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-2xl",
+            "text-subhead font-normal leading-relaxed max-w-2xl",
             dark ? "text-slate-300" : "text-slate-600"
           )}
         >
@@ -68,4 +68,3 @@ export default function SectionHeading({
     </div>
   );
 }
-

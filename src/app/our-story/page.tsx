@@ -29,9 +29,11 @@ export default function OurStoryPage() {
             </span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-ocean tracking-tight leading-[1.08]">
+          <h1 className="text-hero font-light text-ocean tracking-tight leading-[0.96]">
             THE STORY OF <br />
-            <span className="font-semibold text-ocean-deep">KALASH.</span>
+            <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-ocean-deep via-ocean-medium to-nature-emerald">
+              KALASH.
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed pt-2">

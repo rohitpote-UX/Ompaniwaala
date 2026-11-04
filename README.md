@@ -109,3 +109,4 @@ NEXT_PUBLIC_CONTACT_EMAIL="orders@kalashwater.in"
 
 - **Client**: KALASH Drinking Water, Pune, Maharashtra, India.
 - **Designed & Developed by**: [Goldspade — Forged for Founders](https://goldspade.in).
+

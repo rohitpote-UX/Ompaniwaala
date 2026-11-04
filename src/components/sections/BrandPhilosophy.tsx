@@ -14,19 +14,19 @@ export default function BrandPhilosophy() {
           {/* Overline */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
             <span className="w-2 h-2 rounded-full bg-nature animate-pulse-subtle" />
-            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-white">
+            <span className="text-[11px] font-mono font-semibold tracking-[0.25em] uppercase text-white">
               Brand Philosophy
             </span>
           </div>
 
           {/* Master Display Typography */}
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.08] text-white">
+          <h2 className="text-section-title font-light tracking-tight leading-[1.04] text-white">
             NOT JUST WATER. <br />
-            <span className="font-semibold text-nature-leaf">AN EVERYDAY ESSENTIAL.</span>
+            <span className="font-serif italic font-normal text-nature-leaf">AN EVERYDAY ESSENTIAL.</span>
           </h2>
 
           {/* Core Manifesto Paragraph */}
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 font-normal leading-relaxed max-w-3xl mx-auto">
+          <p className="text-subhead text-white/80 font-normal leading-relaxed max-w-3xl mx-auto">
             KALASH is built around a simple belief: everyday essentials deserve care, consistency and a better experience. Drinking water is the silent catalyst of daily human health, quiet family moments, and productive workplaces.
           </p>
 
