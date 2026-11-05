@@ -1,52 +1,23 @@
-# KALASH — Pure By Nature 💧
-### Premium Immersive Brand Website & Drinking Water Platform
-**Agency:** Goldspade — Forged for Founders ([https://goldspade.in](https://goldspade.in))  
+# KALASH | Om Paaniwaala 💧
+### Premium Editorial Water Jar Supplier Platform
 **Primary Market:** Pune, Maharashtra, India  
-**Creative Standard:** Awwwards / FWA / CSS Design Awards level  
+**Creative Standard:** Awwwards / FWA / Stellar Management Editorial Design  
 
 ---
 
 ## Overview
 
-**KALASH** is an Indian drinking-water brand reimagined as an international luxury digital experience. Built around the core creative thesis **"BEYOND THE DROP,"** the website combines the sacred Indian heritage of the Kalash vessel with modern beverage packaging, automated hygienic processing, and dependable daily morning delivery across Pune.
+**KALASH | Om Paaniwaala** is a premium drinking water brand and 20L water jar supplier serving homes, corporate offices, and institutions across Pune. The web platform is designed with an editorial, image-led, high-contrast aesthetic featuring:
 
----
-
-## 🌟 Key Highlights & Experience
-
-- **Cinematic Experience Opening**: Film-style opening reveal crediting *Goldspade Presents // Beyond The Drop* with animated caustic shockwaves and audio cues.
-- **Organic Multi-Image Hero Showcase**:
-  - *20L Pure Water Jar*: Blue polycarbonate container with sealed tamper-evident cap and fresh condensation.
-  - *Packaged Bottles & Splash*: High-speed dynamic water splash photography.
-  - *Pune Delivery Specialist*: Courteous doorstep delivery at upscale residential apartments.
-  - *Automated Hygiene Plant*: Multi-stage purification with stainless steel lines and blue UV clarification.
-  - Zero sharp borders; crafted with deeply curved organic silhouettes (`rounded-[3.2rem]`) and floating satellite pills.
-- **Interactive Pune Locality Checker**:
-  - Real-time route availability selector (*Baner, Kothrud, Wakad, Hinjawadi, Aundh, Kalyani Nagar, Viman Nagar, Hadapsar*).
-  - Instant dispatch slot confirmation (`Tomorrow 07:30 AM`).
-- **Instant WhatsApp Integration**:
-  - One-click click-to-chat with pre-filled, polite order inquiry for the selected neighborhood and product format.
-- **Interactive Sound Engine**:
-  - Synthesized crystal water drop and whoosh sounds using the native Web Audio API with a top-bar `AUDIO ON / MUTED` toggle.
-- **Continuous 12-Section Storyboard Narrative**:
-  1. Cinematic Intro (Emblem reveal)
-  2. The Hero (*"EVERY DROP MATTERS."*)
-  3. The Story of a Drop (*"BEYOND THE DROP."* interactive fluid canvas)
-  4. The Meaning of Kalash (4-pillar emblem anatomy: Vessel, Droplet, Leaves, Flow)
-  5. Brand Philosophy (*"NOT JUST WATER. AN EVERYDAY ESSENTIAL."*)
-  6. The Product Suite (20L Jars, 1L & 500ml bottles, hygienic countertop tap cradles)
-  7. Quality & Trust (6 verified operational hygiene standards)
-  8. The Delivery Experience (*"GOOD WATER. WITHOUT THE HASSLE."*)
-  9. Who We Serve (Homes & Families, Offices & Workplaces, Hospitality & Cafes)
-  10. The Brand Statement (*"PURE BY NATURE. TRUSTED FOR YOU."*)
-  11. Order & Contact (Scheduling form with spam honeypot + direct phone/WhatsApp actions)
-  12. Editorial Footer (Pune coverage directory, legal links, and Goldspade credit)
-- **Multi-Page Architecture**:
-  - `/` — Flagship Homepage
-  - `/our-story` — Cultural Origins & Brand Manifesto
-  - `/products` — Detailed Product Specifications & Formats
-  - `/contact` — Pune Dispatch Desk, Coverage Maps & FAQs
-  - `/privacy` & `/terms` — Comprehensive Legal & Jar Deposit Terms
+- **Dual-Video Ambient Hero (100vh)**: Seamlessly alternates between full-bleed city architecture and refreshing pure drink pours, complete with live switcher pill `[City View | Pure Pour]`, faststart MP4 streaming, and high-resolution posters.
+- **Editorial Navigation Bar**: Glassmorphic frosted header with scroll-direction detection (hides on scroll down, reveals on scroll up), brand signature `Kalash | Om paaniwaala`, interactive multi-level dropdowns, an Awwwards-style **Order Now** pill button with text-swap animation, and an architectural 3-line hamburger menu icon.
+- **Full-Screen Editorial Menu**: High-contrast, full-screen overlay with staggered clip-path line reveals and quick access to all Pune routes, services, and order desks.
+- **Centered Editorial Purity Statement**: Balanced "What We Do" statement with curated capsule imagery, botanical flourish vectors, and rotating quality crests.
+- **Interactive Delivery Areas**: 5 expandable locality panels (*Baner, Hinjawadi, Kharadi, Koregaon Park, Magarpatta*) with smooth flex-grow hover transitions.
+- **Key Operational Figures**: Animated stat counters highlighting 12,500+ daily deliveries, 45-minute timed slots, and 100% BIS/FSSAI-certified lab purity.
+- **Pinned Product Showcase**: ScrollTrigger-pinned product cards showcasing 20L Returnable Mineral Jars, Hot & Cold Floor Dispensers, and Packaged Mineral Bottles.
+- **Capabilities Workflow**: 4-step multi-barrier hygiene flow from 8-stage RO to touchless hermetic cap sealing.
+- **Editorial Footer**: 4-column spacious layout with full brand wordmark, Pune dispatch hub details, and direct WhatsApp / telephone booking.
 
 ---
 
@@ -54,18 +25,18 @@
 
 - **Framework**: Next.js 15 (App Router, Server Components + Prerendered Static Content)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS + CSS Design Tokens
-- **Icons**: Lucide React
-- **Smooth Scroll**: Lenis
-- **Sound**: Web Audio API Synthesizer
-- **SEO**: Schema.org JSON-LD (`Organization`, `LocalBusiness`), OpenGraph, Twitter Cards, `robots.txt`, `sitemap.xml`
+- **Styling**: Tailwind CSS + Custom Design Tokens (Deep Navy `#0A1F33`, Aqua `#1FB5D6`, Off-white `#F6F8FA`)
+- **Typography**: Geometric Sans (`Plus Jakarta Sans`) paired with Luxury Editorial Serif Italic (`Cormorant Garamond`)
+- **Animations & Smooth Scroll**: GSAP (ScrollTrigger, Flip), Lenis Smooth Scroll
+- **Media**: Faststart-optimized H.264 video streaming + WebP/AVIF imagery
+- **SEO & Structured Data**: Schema.org JSON-LD (`Organization`, `LocalBusiness`), OpenGraph, Twitter Cards
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ (tested on Node 24)
+- Node.js 18+ (tested on Node 22+)
 - npm 9+
 
 ### Installation
@@ -81,7 +52,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to experience the website.
 
 ### Production Build
 ```bash
@@ -89,15 +60,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 npm run build
 
 # Start production server
-npm run start
+npm run start -- -p 3000
 ```
 
 ---
 
 ## 📍 Operational Configuration (Pune Hub)
 
-Contact details and operational settings are managed centrally in `src/config/contact.ts` and can be customized via `.env.local`:
-```env
+Contact details, WhatsApp booking templates, and coverage areas are configured centrally in `src/config/brand.ts` and `src/config/contact.ts`.
 NEXT_PUBLIC_CONTACT_PHONE="+91 98220 00000"
 NEXT_PUBLIC_WHATSAPP_NUMBER="919822000000"
 NEXT_PUBLIC_CONTACT_EMAIL="orders@kalashwater.in"
