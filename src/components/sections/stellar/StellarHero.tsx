@@ -1,20 +1,45 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { BRAND_CONFIG } from "@/config/brand";
 import { ArrowUpRight } from "lucide-react";
 import PillButton from "@/components/ui/PillButton";
+import { cn } from "@/lib/utils";
 
 export default function StellarHero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const sublineRef = useRef<HTMLParagraphElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
+  const videoCityRef = useRef<HTMLVideoElement>(null);
+  const videoPourRef = useRef<HTMLVideoElement>(null);
+
+  // Dual-video state: alternates between City Architecture and Liquid Pour
+  const [activeVideo, setActiveVideo] = useState<"city" | "pour">("city");
+
+  // Auto-cycle between the two videos every 12 seconds with smooth crossfade
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveVideo((prev) => (prev === "city" ? "pour" : "city"));
+    }, 12000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Sync play states when video changes
+  useEffect(() => {
+    if (activeVideo === "city") {
+      videoCityRef.current?.play().catch(() => {});
+    } else {
+      videoPourRef.current?.play().catch(() => {});
+    }
+  }, [activeVideo]);
+
+  // Entrance animations matching Stellar reference
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -23,7 +48,6 @@ export default function StellarHero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-      // Left headline lines reveal
       if (headlineRef.current) {
         const lines = headlineRef.current.querySelectorAll(".hero-line");
         tl.fromTo(
@@ -34,7 +58,6 @@ export default function StellarHero() {
         );
       }
 
-      // Subline reveal
       if (sublineRef.current) {
         tl.fromTo(
           sublineRef.current,
@@ -44,7 +67,6 @@ export default function StellarHero() {
         );
       }
 
-      // Right bottom card widget reveal
       if (cardRef.current) {
         tl.fromTo(
           cardRef.current,
@@ -63,31 +85,82 @@ export default function StellarHero() {
       ref={heroRef}
       className="relative w-full h-[100dvh] min-h-[720px] flex flex-col justify-between overflow-hidden bg-navy text-white"
     >
-      {/* 1. Full-Bleed Authentic Pexels Looping Video Background */}
+      {/* 1. Dual-Video Ambient Background (City Architecture & Liquid Pour) */}
       <div className="absolute inset-0 z-0">
+        {/* Video 1: City Building Architecture */}
         <video
-          ref={videoRef}
+          ref={videoCityRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/city-delivery-dusk.jpg"
+          className={cn(
+            "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out",
+            activeVideo === "city" ? "opacity-100 z-10" : "opacity-0 z-0"
+          )}
+        >
+          <source src="/videos/hero-city.mp4" type="video/mp4" />
+          <source src="/videos/city-delivery-loop.mp4" type="video/mp4" />
+        </video>
+
+        {/* Video 2: Refreshing Liquid / Drink Pour */}
+        <video
+          ref={videoPourRef}
           autoPlay
           loop
           muted
           playsInline
           poster="/images/hero-water-pexels-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className={cn(
+            "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out",
+            activeVideo === "pour" ? "opacity-100 z-10" : "opacity-0 z-0"
+          )}
         >
+          <source src="/videos/hero-pour.mp4" type="video/mp4" />
           <source src="/videos/hero-water-pexels.mp4" type="video/mp4" />
-          <source src="/videos/city-delivery-loop.mp4" type="video/mp4" />
         </video>
 
         {/* Cinematic Gradient Overlays for High Typographic Contrast (Exact reference mood) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/25 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none z-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/25 to-transparent pointer-events-none z-20" />
       </div>
 
-      {/* 2. Expansive Upper White Space (Breathing Room for Skyline & Fixed Nav) */}
+      {/* 2. Top-Right Video Ambient Switcher */}
+      <div className="absolute top-24 sm:top-28 right-8 sm:right-12 lg:right-16 z-30">
+        <div className="inline-flex items-center gap-1 p-1 rounded-full bg-black/45 backdrop-blur-md border border-white/15 shadow-lg">
+          <button
+            onClick={() => setActiveVideo("city")}
+            className={cn(
+              "px-3.5 py-1.5 rounded-full text-[11px] font-sans uppercase tracking-[0.12em] transition-all duration-300",
+              activeVideo === "city"
+                ? "bg-white text-navy font-semibold shadow-md"
+                : "text-white/70 hover:text-white"
+            )}
+            aria-label="Switch to City Architecture Video"
+          >
+            City View
+          </button>
+          <button
+            onClick={() => setActiveVideo("pour")}
+            className={cn(
+              "px-3.5 py-1.5 rounded-full text-[11px] font-sans uppercase tracking-[0.12em] transition-all duration-300",
+              activeVideo === "pour"
+                ? "bg-white text-navy font-semibold shadow-md"
+                : "text-white/70 hover:text-white"
+            )}
+            aria-label="Switch to Pure Pour Video"
+          >
+            Pure Pour
+          </button>
+        </div>
+      </div>
+
+      {/* 3. Expansive Upper White Space (Breathing Room for Skyline & Fixed Nav) */}
       <div className="w-full flex-1 pointer-events-none" />
 
-      {/* 3. Lower Third Hero Content (Exact layout matching the Stellar reference image) */}
-      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 pb-12 sm:pb-16 max-w-[1560px] mx-auto">
+      {/* 4. Lower Third Hero Content (Exact layout matching the Stellar reference image) */}
+      <div className="relative z-30 w-full px-8 sm:px-12 lg:px-16 pb-12 sm:pb-16 max-w-[1560px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16">
           {/* Left Column: Master Editorial H1 & Subline */}
           <div className="max-w-2xl">
