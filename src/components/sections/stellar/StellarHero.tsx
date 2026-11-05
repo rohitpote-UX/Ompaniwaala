@@ -94,14 +94,13 @@ export default function StellarHero() {
           loop
           muted
           playsInline
-          poster="/images/city-delivery-dusk.jpg"
+          poster="/images/hero-city-poster.jpg"
           className={cn(
             "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out",
             activeVideo === "city" ? "opacity-100 z-10" : "opacity-0 z-0"
           )}
         >
           <source src="/videos/hero-city.mp4" type="video/mp4" />
-          <source src="/videos/city-delivery-loop.mp4" type="video/mp4" />
         </video>
 
         {/* Video 2: Refreshing Liquid / Drink Pour */}
@@ -111,14 +110,13 @@ export default function StellarHero() {
           loop
           muted
           playsInline
-          poster="/images/hero-water-pexels-poster.jpg"
+          poster="/images/hero-pour-poster.jpg"
           className={cn(
             "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out",
             activeVideo === "pour" ? "opacity-100 z-10" : "opacity-0 z-0"
           )}
         >
           <source src="/videos/hero-pour.mp4" type="video/mp4" />
-          <source src="/videos/hero-water-pexels.mp4" type="video/mp4" />
         </video>
 
         {/* Cinematic Gradient Overlays for High Typographic Contrast (Exact reference mood) */}
