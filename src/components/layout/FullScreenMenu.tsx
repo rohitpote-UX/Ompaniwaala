@@ -88,16 +88,21 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
     >
       {/* Top Header Bar inside Overlay */}
       <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between pb-6 border-b border-white/10">
-        <Link href="/" onClick={onClose} className="flex items-center gap-3">
-          <div className="relative w-36 h-10">
-            <Image
-              src="/brand/kalash-logo-white.png"
-              alt={`${BRAND_CONFIG.name} Logo`}
-              fill
-              className="object-contain object-left"
-              priority
-            />
-          </div>
+        <Link
+          href="/"
+          onClick={onClose}
+          className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
+          aria-label="Kalash | Om paaniwaala"
+        >
+          <span className="font-serif text-2xl sm:text-[28px] tracking-tight font-medium text-white transition-opacity group-hover:opacity-90 select-none">
+            Kalash
+          </span>
+          <span className="text-white/35 font-light text-lg sm:text-xl select-none" aria-hidden="true">
+            |
+          </span>
+          <span className="font-sans text-[11px] sm:text-[13px] font-normal tracking-[0.18em] uppercase text-white/80 group-hover:text-white transition-colors select-none">
+            Om paaniwaala
+          </span>
         </Link>
 
         <div className="flex items-center gap-4">
