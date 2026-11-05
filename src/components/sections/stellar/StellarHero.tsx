@@ -63,7 +63,7 @@ export default function StellarHero() {
       ref={heroRef}
       className="relative w-full h-[100dvh] min-h-[720px] flex flex-col justify-between overflow-hidden bg-navy text-white"
     >
-      {/* 1. Full-Bleed Animated Looping Video Background of City Water Delivery */}
+      {/* 1. Full-Bleed Authentic Pexels Looping Video Background */}
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
@@ -71,14 +71,15 @@ export default function StellarHero() {
           loop
           muted
           playsInline
-          poster="/images/city-delivery-dusk.jpg"
+          poster="/images/hero-water-pexels-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover object-center"
         >
+          <source src="/videos/hero-water-pexels.mp4" type="video/mp4" />
           <source src="/videos/city-delivery-loop.mp4" type="video/mp4" />
         </video>
 
         {/* Cinematic Gradient Overlays for High Typographic Contrast (Exact reference mood) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/15 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/25 to-transparent pointer-events-none" />
       </div>
 
