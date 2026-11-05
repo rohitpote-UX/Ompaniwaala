@@ -59,23 +59,24 @@ body {
 }
 
 /* Stellar Editorial Layout Discipline */
+.container-custom,
+.container-stellar {
+  width: 100%;
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
+}
+
 .section-gutter {
-  padding-left: clamp(20px, 4vw, 64px);
-  padding-right: clamp(20px, 4vw, 64px);
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
 }
 
 .section-spacing {
-  padding-top: clamp(80px, 9vw, 160px);
-  padding-bottom: clamp(80px, 9vw, 160px);
-}
-
-.container-stellar {
-  width: 100%;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(20px, 4vw, 64px);
-  padding-right: clamp(20px, 4vw, 64px);
+  padding-top: clamp(96px, 10vw, 160px);
+  padding-bottom: clamp(96px, 10vw, 160px);
 }
 
 /* Fluid Typography Matching Reference */
