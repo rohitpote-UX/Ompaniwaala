@@ -2,7 +2,8 @@ export const BRAND_CONFIG = {
   name: "KALASH",
   tagline: "Pure by Nature",
   concept: "Beyond the Drop",
-  subheading: "Bringing a more thoughtful and dependable drinking-water experience to everyday life.",
+  subheading: "Trusted 20-litre jar supply & drinking-water solutions for residences, corporate offices, and institutions across Pune.",
+  foundedYear: 2018,
   agency: {
     name: "Goldspade",
     tagline: "Forged for Founders",
@@ -12,15 +13,15 @@ export const BRAND_CONFIG = {
     city: "Pune",
     state: "Maharashtra",
     country: "India",
+    address: "Pune, Maharashtra, India",
     primaryPincodes: "411001 – 411057",
   },
   colors: {
+    canvas: "#F6F8FA", // off-white
+    navy: "#0A1F33",   // deep navy text & dark sections
+    aqua: "#1FB5D6",   // energetic water accent
+    sky: "#E6F4F9",    // soft sky tint
     white: "#FFFFFF",
-    oceanBlue: "#073B78",
-    oceanDeep: "#042347",
-    livingGreen: "#39A96B",
-    emeraldGreen: "#2E8856",
-    iceBlue: "#F4F8FC",
   },
   meaning: {
     vessel: {
@@ -45,4 +46,3 @@ export const BRAND_CONFIG = {
     },
   },
 };
-

@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
+  --color-canvas: #f6f8fa;
+  --color-navy: #0a1f33;
+  --color-navy-deep: #061424;
+  --color-aqua: #1fb5d6;
+  --color-sky: #e6f4f9;
   --color-white: #ffffff;
-  --color-ocean: #073b78;
-  --color-ocean-deep: #042347;
-  --color-living-green: #39a96b;
-  --color-ice-blue: #f4f8fc;
   
   --font-sans: var(--font-sans), 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-serif: var(--font-serif), 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
 }
 
@@ -23,29 +23,30 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-canvas);
 }
 
 body {
-  background-color: var(--color-white);
-  color: #1e293b;
+  background-color: var(--color-canvas);
+  color: var(--color-navy);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  selection-background-color: var(--color-ocean);
-  selection-color: #ffffff;
+  selection-background-color: var(--color-navy);
+  selection-color: var(--color-white);
 }
 
 ::selection {
-  background-color: #073b78;
+  background-color: #0a1f33;
   color: #ffffff;
 }
 
-/* Custom minimal scrollbar */
+/* Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f6f8fa;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -54,78 +55,110 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #073b78;
+  background: #0a1f33;
 }
 
-/* Fluid responsive section spacing utility */
-.section-padding {
-  padding-top: clamp(80px, 10vw, 160px);
-  padding-bottom: clamp(80px, 10vw, 160px);
+/* Stellar Editorial Layout Discipline */
+.section-gutter {
+  padding-left: clamp(20px, 4vw, 64px);
+  padding-right: clamp(20px, 4vw, 64px);
 }
 
-.container-custom {
+.section-spacing {
+  padding-top: clamp(80px, 9vw, 160px);
+  padding-bottom: clamp(80px, 9vw, 160px);
+}
+
+.container-stellar {
   width: 100%;
-  max-width: 1480px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(20px, 5vw, 80px);
-  padding-right: clamp(20px, 5vw, 80px);
+  padding-left: clamp(20px, 4vw, 64px);
+  padding-right: clamp(20px, 4vw, 64px);
 }
 
-/* Fluid Typography System */
-.text-hero {
-  font-size: clamp(3.2rem, 7.6vw, 6.75rem);
+/* Fluid Typography Matching Reference */
+.text-stellar-hero {
+  font-size: clamp(48px, 8vw, 128px);
   line-height: 0.94;
   letter-spacing: -0.04em;
 }
 
-.text-section-title {
-  font-size: clamp(2.1rem, 4.3vw, 4.2rem);
-  line-height: 1.05;
+.text-stellar-h2 {
+  font-size: clamp(36px, 5.5vw, 88px);
+  line-height: 1.02;
   letter-spacing: -0.035em;
 }
 
-.text-subhead {
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+.text-stellar-h3 {
+  font-size: clamp(24px, 3.2vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-stellar-body {
+  font-size: clamp(16px, 1.1vw, 18px);
   line-height: 1.65;
-  letter-spacing: -0.01em;
 }
 
-.text-metadata {
-  font-size: clamp(0.6875rem, 0.85vw, 0.8125rem);
-  letter-spacing: 0.22em;
+.text-stellar-label {
+  font-size: clamp(12px, 0.9vw, 13px);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
-.font-editorial-italic {
+/* Elegant Editorial Serif Italic Accent (Single Word per Heading) */
+.font-accent-italic {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
 
-/* Glassmorphism restrained utility */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+/* Editorial Image Curvature */
+.rounded-editorial {
+  border-radius: clamp(16px, 1.8vw, 24px);
 }
 
-.glass-panel-dark {
-  background: rgba(7, 59, 120, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+/* Signature Text-Swap Button Animation */
+.btn-text-swap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  vertical-align: middle;
 }
 
-/* Subtle water gradient masks */
-.water-shimmer {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
+.btn-text-swap .swap-track {
+  position: relative;
+  display: block;
+  height: 1.25em;
+  overflow: hidden;
+  line-height: 1.25em;
+}
+
+.btn-text-swap .swap-item {
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn-text-swap:hover .swap-primary {
+  transform: translateY(-100%);
+}
+
+.btn-text-swap:hover .swap-secondary {
+  transform: translateY(-100%);
+}
+
+/* Clip Path Mask Utilities for Smooth Inset Reveals */
+.clip-reveal-init {
+  clip-path: inset(100% 0 0 0);
+}
+
+.clip-reveal-active {
+  clip-path: inset(0% 0 0 0);
+  transition: clip-path 1.2s cubic-bezier(0.76, 0, 0.24, 1);
 }

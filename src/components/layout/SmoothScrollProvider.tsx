@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Lenis from "lenis";
+import { initLenisScrollTriggerSync } from "@/lib/animations";
 
 export default function SmoothScrollProvider({
   children,
@@ -11,36 +12,29 @@ export default function SmoothScrollProvider({
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Respect reduced motion
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    if (prefersReducedMotion) {
-      return;
-    }
+    if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 0.95,
+      touchMultiplier: 1.4,
     });
 
     lenisRef.current = lenis;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    const animId = requestAnimationFrame(raf);
+    // Synchronize Lenis with GSAP ScrollTrigger & Ticker
+    const cleanupSync = initLenisScrollTriggerSync(lenis);
 
     return () => {
-      cancelAnimationFrame(animId);
+      cleanupSync();
       lenis.destroy();
       lenisRef.current = null;
     };
@@ -48,4 +42,3 @@ export default function SmoothScrollProvider({
 
   return <>{children}</>;
 }
-
