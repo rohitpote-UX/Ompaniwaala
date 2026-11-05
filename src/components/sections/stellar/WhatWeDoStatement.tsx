@@ -21,9 +21,7 @@ export default function WhatWeDoStatement() {
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (prefersReduced) {
-      return;
-    }
+    if (prefersReduced) return;
 
     const ctx = gsap.context(() => {
       if (!containerRef.current || !textRef.current) return;
@@ -31,7 +29,7 @@ export default function WhatWeDoStatement() {
       const words = textRef.current.querySelectorAll(".scrub-word");
       const inlineImages = [img1Ref.current, img2Ref.current, img3Ref.current].filter(Boolean);
 
-      // Set initial states
+      // Initial state
       gsap.set(words, { opacity: 0.15 });
       gsap.set(inlineImages, { scale: 0.2, opacity: 0 });
 
@@ -60,12 +58,7 @@ export default function WhatWeDoStatement() {
       if (img1Ref.current) {
         scrubTl.to(
           img1Ref.current,
-          {
-            scale: 1,
-            opacity: 1,
-            ease: "back.out(1.6)",
-            duration: 0.2,
-          },
+          { scale: 1, opacity: 1, ease: "back.out(1.6)", duration: 0.2 },
           0.1
         );
       }
@@ -73,12 +66,7 @@ export default function WhatWeDoStatement() {
       if (img2Ref.current) {
         scrubTl.to(
           img2Ref.current,
-          {
-            scale: 1,
-            opacity: 1,
-            ease: "back.out(1.6)",
-            duration: 0.2,
-          },
+          { scale: 1, opacity: 1, ease: "back.out(1.6)", duration: 0.2 },
           0.28
         );
       }
@@ -86,12 +74,7 @@ export default function WhatWeDoStatement() {
       if (img3Ref.current) {
         scrubTl.to(
           img3Ref.current,
-          {
-            scale: 1,
-            opacity: 1,
-            ease: "back.out(1.6)",
-            duration: 0.2,
-          },
+          { scale: 1, opacity: 1, ease: "back.out(1.6)", duration: 0.2 },
           0.52
         );
       }
@@ -122,12 +105,12 @@ export default function WhatWeDoStatement() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-canvas text-navy py-24 sm:py-32 lg:py-40 transition-colors"
+      className="relative w-full bg-canvas text-navy py-28 sm:py-36 lg:py-48 transition-colors"
     >
-      <div className="section-gutter max-w-[1440px] mx-auto">
-        {/* Editorial Section Label */}
-        <div className="mb-8 sm:mb-14">
-          <span className="text-stellar-label text-navy/55 uppercase font-medium tracking-[0.2em] inline-flex items-center gap-2">
+      <div className="w-full px-8 sm:px-12 lg:px-16 max-w-[1560px] mx-auto">
+        {/* Editorial Section Label with Generous Spacing */}
+        <div className="mb-10 sm:mb-16">
+          <span className="text-stellar-label text-navy/50 uppercase font-medium tracking-[0.2em] inline-flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
             What we do
           </span>
@@ -136,18 +119,17 @@ export default function WhatWeDoStatement() {
         {/* Master Large Paragraph Heading with Inline Images */}
         <h2
           ref={textRef}
-          className="text-stellar-h2 font-sans font-medium text-navy leading-[1.28] sm:leading-[1.22] tracking-tight max-w-6xl selection:bg-aqua/20"
+          className="text-stellar-h2 font-sans font-medium text-navy leading-[1.3] sm:leading-[1.24] tracking-tight max-w-6xl selection:bg-aqua/20"
         >
-          {/* "From purified [img1] source to sealed [img2] jars, we deliver the water where families live, work [img3] & thrive." */}
-          <span className="scrub-word inline-block mr-2 sm:mr-3">From</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3 font-accent-italic font-normal italic text-ocean">
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">From</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5 font-accent-italic font-normal italic text-ocean">
             purified
           </span>
 
           {/* Inline Image 1: Water Source */}
           <span
             ref={img1Ref}
-            className="inline-block relative overflow-hidden align-middle rounded-full mx-1.5 sm:mx-2.5 shadow-md border border-navy/10 w-[2.2em] sm:w-[2.5em] h-[1.32em] sm:h-[1.4em] -rotate-3 transition-transform duration-300 hover:rotate-0 hover:scale-105"
+            className="inline-block relative overflow-hidden align-middle rounded-full mx-2 sm:mx-3 shadow-md border border-navy/10 w-[2.2em] sm:w-[2.5em] h-[1.32em] sm:h-[1.4em] -rotate-3 transition-transform duration-300 hover:rotate-0 hover:scale-105"
           >
             <Image
               src="/images/inline-source.jpg"
@@ -158,16 +140,16 @@ export default function WhatWeDoStatement() {
             />
           </span>
 
-          <span className="scrub-word inline-block mr-2 sm:mr-3">source</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">to</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3 font-accent-italic font-normal italic text-ocean">
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">source</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">to</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5 font-accent-italic font-normal italic text-ocean">
             sealed
           </span>
 
           {/* Inline Image 2: Sealed Jar */}
           <span
             ref={img2Ref}
-            className="inline-block relative overflow-hidden align-middle rounded-full mx-1.5 sm:mx-2.5 shadow-md border border-navy/10 w-[2.2em] sm:w-[2.5em] h-[1.32em] sm:h-[1.4em] rotate-2 transition-transform duration-300 hover:rotate-0 hover:scale-105"
+            className="inline-block relative overflow-hidden align-middle rounded-full mx-2 sm:mx-3 shadow-md border border-navy/10 w-[2.2em] sm:w-[2.5em] h-[1.32em] sm:h-[1.4em] rotate-2 transition-transform duration-300 hover:rotate-0 hover:scale-105"
           >
             <Image
               src="/images/inline-jar.jpg"
@@ -178,20 +160,20 @@ export default function WhatWeDoStatement() {
             />
           </span>
 
-          <span className="scrub-word inline-block mr-2 sm:mr-3">jars,</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">we</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">deliver</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">the</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">water</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">where</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">families</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">live,</span>
-          <span className="scrub-word inline-block mr-2 sm:mr-3">work</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">jars,</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">we</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">deliver</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">the</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">water</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">where</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">families</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">live,</span>
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5">work</span>
 
           {/* Inline Image 3: Thriving Family / Workplace */}
           <span
             ref={img3Ref}
-            className="inline-block relative overflow-hidden align-middle rounded-full mx-1.5 sm:mx-2.5 shadow-md border border-navy/10 w-[2.2em] sm:w-[2.5em] h-[1.32em] sm:h-[1.4em] -rotate-2 transition-transform duration-300 hover:rotate-0 hover:scale-105"
+            className="inline-block relative overflow-hidden align-middle rounded-full mx-2 sm:mx-3 shadow-md border border-navy/10 w-[2.2em] sm:w-[2.5em] h-[1.32em] sm:h-[1.4em] -rotate-2 transition-transform duration-300 hover:rotate-0 hover:scale-105"
           >
             <Image
               src="/images/inline-family.jpg"
@@ -202,23 +184,23 @@ export default function WhatWeDoStatement() {
             />
           </span>
 
-          <span className="scrub-word inline-block mr-2 sm:mr-3 font-accent-italic font-normal italic text-ocean">
+          <span className="scrub-word inline-block mr-2 sm:mr-3.5 font-accent-italic font-normal italic text-ocean">
             &amp;
           </span>
           <span className="scrub-word inline-block">thrive.</span>
         </h2>
 
-        {/* Supporting Editorial Column */}
+        {/* Supporting Editorial Column with Generous White Spacing */}
         <div
           ref={subcopyRef}
-          className="mt-14 sm:mt-20 pt-10 sm:pt-14 border-t border-navy/10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-baseline"
+          className="mt-20 sm:mt-28 pt-12 sm:pt-16 border-t border-navy/10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-baseline"
         >
           <div className="lg:col-span-4">
             <span className="text-xs uppercase font-sans tracking-[0.16em] text-navy/50 font-semibold block">
               PUNE LOGISTICS &amp; PURITY ASSURANCE
             </span>
-            <p className="mt-2 text-sm text-navy/70">
-              Serving residential societies, IT hubs, and commercial offices across Pune.
+            <p className="mt-2.5 text-sm text-navy/70 leading-relaxed">
+              Serving residential societies, IT hubs, and commercial offices across Pune daily.
             </p>
           </div>
 
