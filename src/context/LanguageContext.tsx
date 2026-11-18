@@ -3,11 +3,12 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { translations, TranslationSchema } from "@/translations";
 
-export type Language = "en" | "mr";
+export type Language = "en" | "mr" | "hi";
 
 interface LanguageContextType {
   lang: Language;
   setLang: (lang: Language) => void;
+  cycleLang: () => void;
   toggleLang: () => void;
   t: TranslationSchema;
 }
@@ -24,7 +25,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     // Check localStorage or browser language on mount
     try {
       const savedLang = localStorage.getItem(STORAGE_KEY) as Language | null;
-      if (savedLang === "en" || savedLang === "mr") {
+      if (savedLang === "en" || savedLang === "mr" || savedLang === "hi") {
         setLangState(savedLang);
         document.documentElement.lang = savedLang;
         document.documentElement.setAttribute("data-lang", savedLang);
@@ -49,9 +50,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const toggleLang = () => {
-    setLang(lang === "en" ? "mr" : "en");
+  const cycleLang = () => {
+    if (lang === "en") setLang("mr");
+    else if (lang === "mr") setLang("hi");
+    else setLang("en");
   };
+
+  const toggleLang = cycleLang;
 
   const currentTranslations = translations[lang] || translations.en;
 
@@ -60,6 +65,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       value={{
         lang,
         setLang,
+        cycleLang,
         toggleLang,
         t: currentTranslations,
       }}

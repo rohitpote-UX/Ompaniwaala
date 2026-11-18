@@ -4,8 +4,10 @@ import React from "react";
 import PillButton from "@/components/ui/PillButton";
 import { CONTACT_CONFIG } from "@/config/contact";
 import { Phone, MessageSquare } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CtaBanner() {
+  const { t } = useLanguage();
   return (
     <section className="relative w-full bg-navy text-white py-28 sm:py-36 lg:py-44 overflow-hidden">
       {/* Subtle ambient water illumination glow */}
@@ -16,20 +18,20 @@ export default function CtaBanner() {
         {/* Top Label */}
         <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/90 text-xs font-sans uppercase tracking-[0.16em]">
           <span className="w-1.5 h-1.5 rounded-full bg-aqua animate-pulse" />
-          <span>Aundh, Baner &amp; Khadki Dispatch</span>
+          <span>{t.ctaBanner.tagline}</span>
         </div>
 
         {/* Master CTA Heading with Italic Accent */}
         <h2 className="text-[clamp(38px,5.8vw,80px)] font-sans font-medium text-white tracking-tight leading-[1.05] text-balance">
-          Pure water for your family &amp; workplace. Delivered{" "}
+          {t.ctaBanner.headingNormal}{" "}
           <span className="font-accent-italic font-normal italic text-sky inline-block">
-            reliably.
+            {t.ctaBanner.headingItalic}
           </span>
         </h2>
 
         {/* Subtitle */}
         <p className="mt-8 text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-normal text-balance">
-          Experience punctual local supply, clean 20L water jars, and responsive customer service across Aundh, Baner, and Khadki.
+          {t.ctaBanner.subline}
         </p>
 
         {/* Action Buttons with Text-Swap */}
@@ -40,7 +42,7 @@ export default function CtaBanner() {
             size="lg"
             showArrow
           >
-            Order water now
+            {t.ctaBanner.buttonText}
           </PillButton>
 
           <a

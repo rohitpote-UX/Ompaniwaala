@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ShieldCheck, Droplets, Sparkles, Truck } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const CAPABILITIES = [
   {
@@ -36,6 +37,14 @@ const CAPABILITIES = [
 ];
 
 export default function CapabilitiesSection() {
+  const { t } = useLanguage();
+
+  const capabilities = CAPABILITIES.map((cap, idx) => ({
+    ...cap,
+    title: t.capabilities.steps[idx]?.title || cap.title,
+    description: t.capabilities.steps[idx]?.desc || cap.description,
+  }));
+
   return (
     <section
       id="capabilities"
@@ -47,24 +56,24 @@ export default function CapabilitiesSection() {
           <div>
             <span className="text-stellar-label text-navy/50 uppercase tracking-[0.2em] font-medium inline-flex items-center gap-2 mb-4 block">
               <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
-              Service &amp; Quality Process
+              {t.capabilities.label}
             </span>
             <h2 className="text-stellar-h2 font-sans font-medium text-navy tracking-tight leading-[1.08]">
-              Our dedicated{" "}
+              {t.capabilities.headingNormal}{" "}
               <span className="font-accent-italic font-normal italic text-ocean">
-                service process
+                {t.capabilities.headingItalic}
               </span>
             </h2>
           </div>
 
           <p className="text-base sm:text-lg text-navy/70 max-w-md leading-relaxed font-normal">
-            Focused on clean containers, verified water quality, and courteous doorstep delivery across our Pune routes.
+            {t.capabilities.subline}
           </p>
         </div>
 
         {/* 4-Step Grid with Generous Padding */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-          {CAPABILITIES.map((cap) => {
+          {capabilities.map((cap) => {
             const Icon = cap.icon;
             return (
               <div

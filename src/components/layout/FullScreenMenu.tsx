@@ -18,14 +18,39 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
   const containerRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
-  const { lang, t } = useLanguage();
+  const { lang, setLang, t } = useLanguage();
 
   const menuLinks = [
-    { number: "01", label: lang === "mr" ? "आमच्याबद्दल" : "About Us", href: "/our-story", accent: lang === "mr" ? "औंध केंद्र" : "Aundh Hub" },
-    { number: "02", label: lang === "mr" ? "२०L वॉटर जार" : "20L Water Jars", href: "/products", accent: lang === "mr" ? "थेट पुरवठा" : "Direct Supply" },
-    { number: "03", label: lang === "mr" ? "वितरण क्षेत्रे" : "Delivery Routes", href: "/#delivery-areas", accent: lang === "mr" ? "औंध, बाणेर व खडकी" : "Aundh, Baner & Khadki" },
-    { number: "04", label: lang === "mr" ? "कार्यपद्धती" : "Service Workflow", href: "/#capabilities", accent: lang === "mr" ? "स्वच्छ जार व सील" : "Clean Jars & Seals" },
-    { number: "05", label: lang === "mr" ? "संपर्क व ऑर्डर्स" : "Contact & Orders", href: "/contact", accent: lang === "mr" ? "थेट समन्वय" : "Direct Dispatch" },
+    {
+      number: "01",
+      label: lang === "mr" ? "आमच्याबद्दल" : lang === "hi" ? "हमारे बारे में" : "About Us",
+      href: "/our-story",
+      accent: lang === "mr" ? "औंध केंद्र" : lang === "hi" ? "औंध केंद्र" : "Aundh Hub",
+    },
+    {
+      number: "02",
+      label: lang === "mr" ? "२०L वॉटर जार" : lang === "hi" ? "२०L वॉटर जार" : "20L Water Jars",
+      href: "/products",
+      accent: lang === "mr" ? "थेट पुरवठा" : lang === "hi" ? "प्रत्यक्ष आपूर्ति" : "Direct Supply",
+    },
+    {
+      number: "03",
+      label: lang === "mr" ? "वितरण क्षेत्रे" : lang === "hi" ? "डिलीवरी क्षेत्र" : "Delivery Routes",
+      href: "/#delivery-areas",
+      accent: lang === "mr" ? "औंध, बाणेर व खडकी" : lang === "hi" ? "औंध, बानेर व खड़की" : "Aundh, Baner & Khadki",
+    },
+    {
+      number: "04",
+      label: lang === "mr" ? "कार्यपद्धती" : lang === "hi" ? "सेवा प्रक्रिया" : "Service Workflow",
+      href: "/#capabilities",
+      accent: lang === "mr" ? "स्वच्छ जार व सील" : lang === "hi" ? "स्वच्छ जार व सील" : "Clean Jars & Seals",
+    },
+    {
+      number: "05",
+      label: lang === "mr" ? "संपर्क व ऑर्डर्स" : lang === "hi" ? "संपर्क एवं ऑर्डर" : "Contact & Orders",
+      href: "/contact",
+      accent: lang === "mr" ? "थेट समन्वय" : lang === "hi" ? "सीधा समन्वय" : "Direct Dispatch",
+    },
   ];
 
   useEffect(() => {
@@ -106,7 +131,44 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
           </span>
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Tri-lingual Language Selector */}
+          <div
+            role="group"
+            aria-label="Language selection"
+            className="hidden sm:inline-flex items-center p-0.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-[11px] font-sans font-medium tracking-wider select-none"
+          >
+            <button
+              type="button"
+              onClick={() => setLang("en")}
+              className={`px-2 py-0.5 rounded-full transition-colors ${
+                lang === "en" ? "bg-white/20 text-aqua font-semibold" : "text-white/60 hover:text-white"
+              }`}
+            >
+              EN
+            </button>
+            <span className="text-white/20 text-[9px] mx-0.5">•</span>
+            <button
+              type="button"
+              onClick={() => setLang("mr")}
+              className={`px-2 py-0.5 rounded-full transition-colors ${
+                lang === "mr" ? "bg-white/20 text-aqua font-semibold" : "text-white/60 hover:text-white"
+              }`}
+            >
+              मराठी
+            </button>
+            <span className="text-white/20 text-[9px] mx-0.5">•</span>
+            <button
+              type="button"
+              onClick={() => setLang("hi")}
+              className={`px-2 py-0.5 rounded-full transition-colors ${
+                lang === "hi" ? "bg-white/20 text-aqua font-semibold" : "text-white/60 hover:text-white"
+              }`}
+            >
+              हिंदी
+            </button>
+          </div>
+
           <PillButton
             href={CONTACT_CONFIG.whatsappMessageTemplate()}
             external

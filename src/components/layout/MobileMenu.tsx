@@ -8,6 +8,7 @@ import { BRAND_CONFIG } from "@/config/brand";
 import { CONTACT_CONFIG } from "@/config/contact";
 import { X, Phone, MessageSquare, ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -15,28 +16,64 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  const { lang, setLang, t } = useLanguage();
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-ocean text-white transition-opacity duration-300 md:hidden">
+    <div className="fixed inset-0 z-50 flex flex-col bg-ocean text-white transition-opacity duration-300 md:hidden overflow-y-auto">
       {/* Top Bar */}
       <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
         <Link href="/" onClick={onClose} className="flex items-center gap-2">
           <span className="font-serif text-2xl tracking-tight font-medium text-white">
-            Ranjeet
+            {t.nav.brandFirst}
           </span>
           <span className="text-white/40 font-light">|</span>
           <span className="font-sans text-xs uppercase tracking-widest text-white/80">
-            Enterprises
+            {t.nav.brandSecond}
           </span>
         </Link>
         <button
           onClick={onClose}
           className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-          aria-label="Close Menu"
+          aria-label={t.nav.close}
         >
           <X className="w-6 h-6" />
         </button>
+      </div>
+
+      {/* Language Switcher Bar in Mobile Drawer */}
+      <div className="px-6 py-3 border-b border-white/10 bg-white/5 flex items-center justify-between">
+        <span className="text-xs uppercase font-mono tracking-wider text-white/50">Language:</span>
+        <div className="inline-flex items-center p-0.5 rounded-full border border-white/20 bg-white/5 text-xs font-sans">
+          <button
+            type="button"
+            onClick={() => setLang("en")}
+            className={`px-3 py-1 rounded-full transition-colors ${
+              lang === "en" ? "bg-white/20 text-aqua font-semibold" : "text-white/60"
+            }`}
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            onClick={() => setLang("mr")}
+            className={`px-3 py-1 rounded-full transition-colors ${
+              lang === "mr" ? "bg-white/20 text-aqua font-semibold" : "text-white/60"
+            }`}
+          >
+            मराठी
+          </button>
+          <button
+            type="button"
+            onClick={() => setLang("hi")}
+            className={`px-3 py-1 rounded-full transition-colors ${
+              lang === "hi" ? "bg-white/20 text-aqua font-semibold" : "text-white/60"
+            }`}
+          >
+            हिंदी
+          </button>
+        </div>
       </div>
 
       {/* Navigation Links */}

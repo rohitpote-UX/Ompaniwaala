@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PillButton from "@/components/ui/PillButton";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const PRODUCTS = [
   {
@@ -40,6 +41,14 @@ const PRODUCTS = [
 ];
 
 export default function FeaturedProducts() {
+  const { t } = useLanguage();
+
+  const products = PRODUCTS.map((prod, idx) => ({
+    ...prod,
+    title: t.featuredProducts.products[idx]?.title || prod.title,
+    description: t.featuredProducts.products[idx]?.tagline || prod.description,
+  }));
+
   return (
     <section
       id="products"
@@ -51,12 +60,12 @@ export default function FeaturedProducts() {
           <div>
             <span className="text-stellar-label text-navy/50 uppercase tracking-[0.2em] font-medium inline-flex items-center gap-2 mb-4 block">
               <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
-              Product Catalog
+              {t.featuredProducts.label}
             </span>
             <h2 className="text-stellar-h2 font-sans font-medium text-navy tracking-tight leading-[1.08]">
-              Crafted for everyday{" "}
+              {t.featuredProducts.headingNormal}{" "}
               <span className="font-accent-italic font-normal italic text-ocean">
-                purity
+                {t.featuredProducts.headingItalic}
               </span>
             </h2>
           </div>
@@ -68,7 +77,7 @@ export default function FeaturedProducts() {
 
         {/* 3 Editorial Product Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
-          {PRODUCTS.map((product) => (
+          {products.map((product) => (
             <div
               key={product.title}
               className="group flex flex-col justify-between bg-white rounded-2xl p-6 sm:p-8 border border-navy/10 hover:border-navy/20 transition-all duration-300 shadow-sm hover:shadow-xl"

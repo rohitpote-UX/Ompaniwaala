@@ -30,7 +30,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const lastScrollY = useRef(0);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const { lang, toggleLang, t } = useLanguage();
+  const { lang, setLang, t } = useLanguage();
 
   const navItems: NavItem[] = [
     {
@@ -197,21 +197,57 @@ export default function Navbar() {
 
             {/* Actions: Language Toggle + Order Now Button + Stylish 3-line Menu Icon */}
             <div className="flex items-center gap-2.5 sm:gap-3.5">
-              {/* Bilingual Language Switcher Toggle (EN | मराठी) */}
-              <button
-                onClick={toggleLang}
-                className="group/lang relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/20 hover:border-white/50 bg-white/5 hover:bg-white/15 backdrop-blur-md text-[11px] font-sans font-medium tracking-wider uppercase transition-all duration-300 focus:outline-none cursor-pointer"
-                aria-label={`Switch language to ${lang === "en" ? "Marathi (मराठी)" : "English"}`}
-                title={`Switch to ${lang === "en" ? "मराठी" : "English"}`}
+              {/* Tri-lingual Language Selector (EN | मराठी | हिंदी) */}
+              <div
+                role="group"
+                aria-label="Language selection"
+                className="relative inline-flex items-center p-0.5 sm:p-1 rounded-full border border-white/20 bg-white/5 hover:border-white/40 backdrop-blur-md text-[11px] font-sans font-medium tracking-wider select-none transition-colors"
               >
-                <span className={cn("transition-colors duration-200", lang === "en" ? "text-aqua font-semibold" : "text-white/60")}>
+                <button
+                  type="button"
+                  onClick={() => setLang("en")}
+                  className={cn(
+                    "px-2 sm:px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer focus:outline-none uppercase",
+                    lang === "en"
+                      ? "bg-white/20 text-aqua font-semibold shadow-sm"
+                      : "text-white/60 hover:text-white"
+                  )}
+                  aria-label="English language"
+                  title="English (Default)"
+                >
                   EN
-                </span>
-                <span className="text-white/30 text-[10px]">|</span>
-                <span className={cn("transition-colors duration-200 font-medium", lang === "mr" ? "text-aqua font-semibold" : "text-white/60")}>
+                </button>
+                <span className="text-white/20 text-[9px] mx-0.5 sm:mx-1">•</span>
+                <button
+                  type="button"
+                  onClick={() => setLang("mr")}
+                  className={cn(
+                    "px-2 sm:px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer focus:outline-none",
+                    lang === "mr"
+                      ? "bg-white/20 text-aqua font-semibold shadow-sm"
+                      : "text-white/60 hover:text-white"
+                  )}
+                  aria-label="मराठी भाषा"
+                  title="मराठी (Marathi)"
+                >
                   मराठी
-                </span>
-              </button>
+                </button>
+                <span className="text-white/20 text-[9px] mx-0.5 sm:mx-1">•</span>
+                <button
+                  type="button"
+                  onClick={() => setLang("hi")}
+                  className={cn(
+                    "px-2 sm:px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer focus:outline-none",
+                    lang === "hi"
+                      ? "bg-white/20 text-aqua font-semibold shadow-sm"
+                      : "text-white/60 hover:text-white"
+                  )}
+                  aria-label="हिंदी भाषा"
+                  title="हिंदी (Hindi)"
+                >
+                  हिंदी
+                </button>
+              </div>
 
               {/* Stylish Awwwards-style "Order Now" Pill Button */}
               <Link

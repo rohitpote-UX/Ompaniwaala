@@ -4,8 +4,10 @@ import React from "react";
 import Image from "next/image";
 import PillButton from "@/components/ui/PillButton";
 import { BRAND_CONFIG } from "@/config/brand";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function AboutEditorial() {
+  const { t } = useLanguage();
   return (
     <section className="relative w-full bg-white text-navy py-28 sm:py-36 lg:py-44 border-t border-navy/5">
       <div className="container-custom">
@@ -36,22 +38,19 @@ export default function AboutEditorial() {
           <div className="lg:col-span-6 flex flex-col justify-center">
             <span className="text-stellar-label text-navy/50 uppercase tracking-[0.2em] font-medium inline-flex items-center gap-2 mb-4 block">
               <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
-              Our Commitment
+              {t.about.label}
             </span>
 
             <h2 className="text-stellar-h2 font-sans font-medium text-navy tracking-tight leading-[1.08]">
-              Dependable water jar delivery Pune families rely on every{" "}
+              {t.about.statement}{" "}
               <span className="font-accent-italic font-normal italic text-ocean">
-                day
+                {t.about.statementItalic}
               </span>
             </h2>
 
             <div className="mt-8 space-y-6 text-base sm:text-lg text-navy/75 leading-relaxed font-normal">
               <p>
-                Located on DP Road in Aundh, Ranjeet Enterprises is a dedicated 20-litre drinking water jar supplier in Pune. We are committed to providing clean water jars, prompt customer service, and dependable water supply for residential homes, corporate offices, and local businesses.
-              </p>
-              <p>
-                With confirmed delivery routes across Aundh, Baner, and Khadki, we ensure customers receive clean, sealed 20L water jars with courteous service and flexible delivery schedules tailored to their consumption.
+                {t.about.desc}
               </p>
             </div>
 
@@ -62,7 +61,7 @@ export default function AboutEditorial() {
                   20L
                 </span>
                 <span className="mt-1 text-xs sm:text-sm text-navy/60 uppercase tracking-wider block font-medium">
-                  Standard Water Jars
+                  {t.about.statsReviews}
                 </span>
               </div>
               <div>
@@ -70,7 +69,7 @@ export default function AboutEditorial() {
                   24 Hrs
                 </span>
                 <span className="mt-1 text-xs sm:text-sm text-navy/60 uppercase tracking-wider block font-medium">
-                  Listed Availability
+                  {t.about.statsAvailability}
                 </span>
               </div>
             </div>
@@ -83,7 +82,7 @@ export default function AboutEditorial() {
                 size="lg"
                 showArrow
               >
-                About our service
+                {t.about.cta}
               </PillButton>
             </div>
           </div>

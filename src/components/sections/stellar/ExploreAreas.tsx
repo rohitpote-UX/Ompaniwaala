@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
-const DELIVERY_AREAS = [
+const BASE_AREAS = [
   {
     id: "aundh",
     name: "Aundh",
@@ -51,6 +52,14 @@ const DELIVERY_AREAS = [
 
 export default function ExploreAreas() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const { t } = useLanguage();
+
+  const deliveryAreas = BASE_AREAS.map((area, idx) => ({
+    ...area,
+    name: t.areas.items[idx]?.name || area.name,
+    tagline: t.areas.items[idx]?.locality || area.tagline,
+    timing: t.areas.items[idx]?.badge || area.timing,
+  }));
 
   return (
     <section
@@ -63,24 +72,24 @@ export default function ExploreAreas() {
           <div>
             <span className="text-stellar-label text-navy/50 uppercase tracking-[0.2em] font-medium inline-flex items-center gap-2 mb-4 block">
               <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
-              Service Coverage
+              {t.areas.label}
             </span>
             <h2 className="text-stellar-h2 font-sans font-medium text-navy tracking-tight leading-[1.08]">
-              Explore our{" "}
+              {t.areas.headingNormal}{" "}
               <span className="font-accent-italic font-normal italic text-ocean">
-                delivery routes
+                {t.areas.headingItalic}
               </span>
             </h2>
           </div>
 
           <p className="text-base sm:text-lg text-navy/70 max-w-md leading-relaxed font-normal">
-            Confirmed daily delivery routes across Aundh, Baner, and Khadki. For other localities, contact our logistics desk to confirm availability.
+            {t.areas.subline}
           </p>
         </div>
 
         {/* 5 Tall Interactive Image Panels (Expanding on Hover) */}
         <div className="flex flex-col md:flex-row gap-3 sm:gap-4 h-[640px] md:h-[580px] lg:h-[640px] w-full">
-          {DELIVERY_AREAS.map((area, index) => {
+          {deliveryAreas.map((area, index) => {
             const isHovered = activeIndex === index;
 
             return (

@@ -20,6 +20,7 @@ export default function WhatWeDoStatement() {
   const img2Ref = useRef<HTMLSpanElement>(null);
   const img3Ref = useRef<HTMLSpanElement>(null);
   const subgridRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -104,7 +105,7 @@ export default function WhatWeDoStatement() {
         <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-white shadow-sm border border-navy/10 text-navy text-xs font-sans uppercase tracking-[0.2em] font-semibold">
             <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
-            <span>WHAT WE DO</span>
+            <span>{t.whatWeDo.label}</span>
           </div>
           <BotanicalFlourish className="opacity-75" />
         </div>
@@ -202,10 +203,10 @@ export default function WhatWeDoStatement() {
                 WATER JAR STANDARD
               </span>
               <h3 className="text-xl font-sans font-medium text-navy tracking-tight">
-                Clean &amp; Sealed 20L Jars
+                {t.whatWeDo.card1Title}
               </h3>
               <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                Hygienically handled and securely sealed 20-litre drinking water jars delivered with utmost care for your home or workplace.
+                {t.whatWeDo.card1Desc}
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-navy/5 text-xs text-aqua font-semibold">
@@ -223,10 +224,10 @@ export default function WhatWeDoStatement() {
                 PUNE SERVICE ROUTE
               </span>
               <h3 className="text-xl font-sans font-medium text-navy tracking-tight">
-                Open 24 Hours Availability
+                {t.whatWeDo.card2Title}
               </h3>
               <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                Listed as open 24 hours on Google Business Profile to support residences, shops, and commercial offices with dependable water replenishment.
+                {t.whatWeDo.card2Desc}
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-navy/5 text-xs text-aqua font-semibold">
@@ -244,10 +245,10 @@ export default function WhatWeDoStatement() {
                 SERVICE COMMITMENT
               </span>
               <h3 className="text-xl font-sans font-medium text-navy tracking-tight">
-                Prompt Customer Service
+                {t.whatWeDo.card3Title}
               </h3>
               <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                Direct doorstep distribution focused on Aundh, Baner, and Khadki with attentive customer service and reliable delivery timing.
+                {t.whatWeDo.card3Desc}
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-navy/5 text-xs text-aqua font-semibold">
@@ -276,7 +277,7 @@ export default function WhatWeDoStatement() {
             size="md"
             showArrow
           >
-            About our service
+            {t.whatWeDo.learnProcess}
           </PillButton>
         </div>
       </div>
