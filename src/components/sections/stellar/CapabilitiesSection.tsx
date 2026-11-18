@@ -7,30 +7,30 @@ import { ShieldCheck, Droplets, Sparkles, Truck } from "lucide-react";
 const CAPABILITIES = [
   {
     step: "01",
-    title: "Multi-Media Sand & Carbon",
-    subtitle: "Origin Clarification",
-    description: "Eliminates physical suspended particulates, chlorine residue, and organic turbidity to render origin water crystal clear.",
+    title: "Quality Sourcing & Selection",
+    subtitle: "Verified Origin Standards",
+    description: "Sourcing drinking water that adheres to strict standards of clarity, purity, and neutral mineral taste.",
     icon: Droplets,
   },
   {
     step: "02",
-    title: "High-Pressure Reverse Osmosis",
-    subtitle: "Mineral Balance",
-    description: "Multi-stage membrane filtration removing heavy dissolved solids, excess fluorides, and micro-contaminants at the molecular scale.",
+    title: "Multi-Point Jar Inspection",
+    subtitle: "Clean Container Check",
+    description: "Thorough inspection of container integrity, cleanliness, and cleanliness prior to dispatch.",
     icon: ShieldCheck,
   },
   {
     step: "03",
-    title: "Dual UV & Ozonation",
-    subtitle: "Zero-Chemical Sterilization",
-    description: "Intense ultraviolet radiation followed by pure oxygen-rich ozone infusion guarantees zero microbiological pathogens.",
+    title: "Secure Cap & Tamper Seal",
+    subtitle: "Hygienic Protection",
+    description: "Hermetic cap sealing to safeguard water purity from transport handling to final delivery.",
     icon: Sparkles,
   },
   {
     step: "04",
-    title: "Touchless Hermetic Bottling",
-    subtitle: "Sealed Integrity",
-    description: "High-speed automated washing, steam sanitizing, filling, and tamper-proof thermal cap sealing without human intervention.",
+    title: "Prompt Doorstep Delivery",
+    subtitle: "Punctual Route Logistics",
+    description: "Direct distribution across Aundh, Baner, and Khadki straight to your doorstep, pantry, or reception.",
     icon: Truck,
   },
 ];
@@ -47,18 +47,18 @@ export default function CapabilitiesSection() {
           <div>
             <span className="text-stellar-label text-navy/50 uppercase tracking-[0.2em] font-medium inline-flex items-center gap-2 mb-4 block">
               <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
-              Engineering &amp; Standards
+              Service &amp; Quality Process
             </span>
             <h2 className="text-stellar-h2 font-sans font-medium text-navy tracking-tight leading-[1.08]">
-              Our multi-stage{" "}
+              Our dedicated{" "}
               <span className="font-accent-italic font-normal italic text-ocean">
-                purity standard
+                service process
               </span>
             </h2>
           </div>
 
           <p className="text-base sm:text-lg text-navy/70 max-w-md leading-relaxed font-normal">
-            Precision engineering at every checkpoint ensures certified mineral balance, zero contaminants, and pristine taste in every sip.
+            Focused on clean containers, verified water quality, and courteous doorstep delivery across our Pune routes.
           </p>
         </div>
 

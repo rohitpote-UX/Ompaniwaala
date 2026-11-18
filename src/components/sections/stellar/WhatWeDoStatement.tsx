@@ -5,8 +5,9 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PillButton from "@/components/ui/PillButton";
-import { KalashSeal, WaterRipplesBackground, BotanicalFlourish } from "@/components/ui/BrandVectors";
+import { RanjeetSeal, WaterRipplesBackground, BotanicalFlourish } from "@/components/ui/BrandVectors";
 import { ShieldCheck, Truck, Sparkles } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -198,17 +199,17 @@ export default function WhatWeDoStatement() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <span className="text-xs uppercase font-sans tracking-[0.18em] text-navy/50 font-semibold block mb-2">
-                PURIFICATION STANDARD
+                WATER JAR STANDARD
               </span>
               <h3 className="text-xl font-sans font-medium text-navy tracking-tight">
-                10-Stage Hospital Grade
+                Clean &amp; Sealed 20L Jars
               </h3>
               <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                Multi-media filtration, molecular Reverse Osmosis, and continuous UV/Ozone sterilization guarantee zero biological contaminants.
+                Hygienically handled and securely sealed 20-litre drinking water jars delivered with utmost care for your home or workplace.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-navy/5 text-xs text-aqua font-semibold">
-              Certified TDS Balance • ISO Standards
+              Inspected Containers • Secure Cap Seal
             </div>
           </div>
 
@@ -219,17 +220,17 @@ export default function WhatWeDoStatement() {
                 <Truck className="w-6 h-6" />
               </div>
               <span className="text-xs uppercase font-sans tracking-[0.18em] text-navy/50 font-semibold block mb-2">
-                PUNE LOGISTICS ROUTE
+                PUNE SERVICE ROUTE
               </span>
               <h3 className="text-xl font-sans font-medium text-navy tracking-tight">
-                Scheduled Daily Supply
+                Open 24 Hours Availability
               </h3>
               <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                Dedicated GPS delivery routes serving residential high-rises, gated communities, and tech campuses across Pune before 9:00 AM.
+                Listed as open 24 hours on Google Business Profile to support residences, shops, and commercial offices with dependable water replenishment.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-navy/5 text-xs text-aqua font-semibold">
-              Baner • Hinjawadi • Kharadi • Kothrud
+              Aundh • Baner • Khadki
             </div>
           </div>
 
@@ -240,17 +241,17 @@ export default function WhatWeDoStatement() {
                 <Sparkles className="w-6 h-6" />
               </div>
               <span className="text-xs uppercase font-sans tracking-[0.18em] text-navy/50 font-semibold block mb-2">
-                HYGIENE GUARANTEE
+                SERVICE COMMITMENT
               </span>
               <h3 className="text-xl font-sans font-medium text-navy tracking-tight">
-                Touchless Hermetic Cap
+                Prompt Customer Service
               </h3>
               <p className="mt-3 text-sm text-navy/70 leading-relaxed">
-                Food-grade BPA-free polycarbonate jars hermetically sealed with tamper-evident heat seals, washed automatically before every refill.
+                Direct doorstep distribution focused on Aundh, Baner, and Khadki with attentive customer service and reliable delivery timing.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-navy/5 text-xs text-aqua font-semibold">
-              100% Recyclable • Tamper Evident
+              12 Google Reviews • 4.6 Rating
             </div>
           </div>
         </div>
@@ -258,13 +259,13 @@ export default function WhatWeDoStatement() {
         {/* Circular Seal & Action Callout */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-8 pt-10 border-t border-navy/10">
           <div className="flex items-center gap-6">
-            <KalashSeal size={96} />
+            <RanjeetSeal size={96} />
             <div>
               <span className="text-sm font-sans font-medium text-navy block">
-                KALASH Certified Purity Assurance
+                Ranjeet Enterprises 20L Water Jar Supply
               </span>
               <span className="text-xs text-navy/60 block">
-                Trusted by 12,500+ households and corporate facilities across Pune.
+                Prompt customer service and clean water jars across Aundh, Baner, and Khadki.
               </span>
             </div>
           </div>
@@ -275,7 +276,7 @@ export default function WhatWeDoStatement() {
             size="md"
             showArrow
           >
-            Explore our heritage
+            About our service
           </PillButton>
         </div>
       </div>

@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MAIN_NAV_ITEMS } from "@/config/navigation";
+import { BRAND_CONFIG } from "@/config/brand";
 import { CONTACT_CONFIG } from "@/config/contact";
 import { X, Phone, MessageSquare, ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -20,16 +21,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-50 flex flex-col bg-ocean text-white transition-opacity duration-300 md:hidden">
       {/* Top Bar */}
       <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
-        <Link href="/" onClick={onClose} className="flex items-center gap-3">
-          <div className="relative w-28 h-10">
-            <Image
-              src="/brand/kalash-logo-white.png"
-              alt="KALASH Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
+        <Link href="/" onClick={onClose} className="flex items-center gap-2">
+          <span className="font-serif text-2xl tracking-tight font-medium text-white">
+            Ranjeet
+          </span>
+          <span className="text-white/40 font-light">|</span>
+          <span className="font-sans text-xs uppercase tracking-widest text-white/80">
+            Enterprises
+          </span>
         </Link>
         <button
           onClick={onClose}
@@ -88,7 +87,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
       {/* Footer Info */}
       <div className="px-8 py-6 border-t border-white/10 bg-ocean-deep text-xs text-white/60 flex flex-col gap-2">
-        <p className="font-medium text-white">KALASH Pune Hub</p>
+        <p className="font-medium text-white">{BRAND_CONFIG.name} Aundh Hub</p>
         <p>{CONTACT_CONFIG.operatingHours}</p>
         <p className="text-[11px] text-white/40 pt-2">
           Designed & Developed by{" "}

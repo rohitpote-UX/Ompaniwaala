@@ -58,7 +58,7 @@ export default function AudienceSection() {
         <SectionHeading
           overline="Tailored Solutions"
           title="PURITY ENGINEERED FOR EVERY ENVIRONMENT."
-          subtitle="Whether nourishing a peaceful household or sustaining high-energy corporate teams, KALASH adapts seamlessly to your volume and schedule."
+          subtitle="Whether nourishing a peaceful household or sustaining high-energy corporate teams, Ranjeet Enterprises adapts seamlessly to your volume and schedule."
           align="left"
         />
 

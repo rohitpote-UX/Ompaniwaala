@@ -2,7 +2,18 @@ import { Metadata } from "next";
 import { BRAND_CONFIG } from "@/config/brand";
 import { CONTACT_CONFIG } from "@/config/contact";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kalashwater.in";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ranjeetenterprises.in";
+
+export const PRIMARY_KEYWORDS = [
+  "20 Litre Water Jar Supplier in Aundh Pune",
+  "Water Jar Delivery in Aundh",
+  "Drinking Water Supplier in Pune",
+  "20 Litre Water Can Delivery Pune",
+  "Water Jar Supplier Near Baner",
+  "Water Jar Supplier Near Khadki",
+  "Ranjeet Enterprises Pune",
+  "20 Litre Water Jar Supplier Pune",
+];
 
 export function generateSiteMetadata({
   title,
@@ -14,18 +25,19 @@ export function generateSiteMetadata({
   path?: string;
 }): Metadata {
   const fullTitle = title
-    ? `${title} | ${BRAND_CONFIG.name} — ${BRAND_CONFIG.tagline}`
-    : `${BRAND_CONFIG.name} — ${BRAND_CONFIG.tagline} | Premium Drinking Water in Pune`;
+    ? `${title} | ${BRAND_CONFIG.name} — 20 Litre Water Jar Supplier in Aundh Pune`
+    : `${BRAND_CONFIG.name} — 20 Litre Water Jar Supplier in Aundh Pune | Drinking Water Delivery`;
 
   const metaDesc =
     description ||
-    "Experience KALASH: Premium, dependable drinking-water delivery in Pune, Maharashtra. Built on the sacred heritage of pure water, thoughtful handling, and everyday convenience.";
+    "Ranjeet Enterprises: 20 Litre drinking water jar supplier in Aundh, Pune. Reliable water jar delivery for homes, offices & commercial businesses across Aundh, Baner & Khadki. Open 24 hours.";
 
   const canonicalUrl = `${siteUrl}${path}`;
 
   return {
     title: fullTitle,
     description: metaDesc,
+    keywords: PRIMARY_KEYWORDS,
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: canonicalUrl,
@@ -39,10 +51,10 @@ export function generateSiteMetadata({
       type: "website",
       images: [
         {
-          url: `${siteUrl}/brand/kalash-hero-banner.jpg`,
+          url: `${siteUrl}/images/hero-jar-20l.jpg`,
           width: 1200,
           height: 630,
-          alt: "KALASH — Pure by Nature",
+          alt: `${BRAND_CONFIG.name} — 20 Litre Water Jar Supplier in Aundh Pune`,
         },
       ],
     },
@@ -50,7 +62,7 @@ export function generateSiteMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description: metaDesc,
-      images: [`${siteUrl}/brand/kalash-hero-banner.jpg`],
+      images: [`${siteUrl}/images/hero-jar-20l.jpg`],
     },
     robots: {
       index: true,
@@ -58,74 +70,87 @@ export function generateSiteMetadata({
     },
     icons: {
       icon: "/favicon.ico",
-      shortcut: "/brand/favicon-64.png",
-      apple: "/brand/favicon-192.png",
     },
   };
 }
 
 export function getStructuredData() {
+  const orgData: Record<string, any> = {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: BRAND_CONFIG.name,
+    url: siteUrl,
+    slogan: BRAND_CONFIG.tagline,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "DP Road, Near Omkar Complex, Opposite Persona Furnishing, Shambhu Vihar Society",
+      addressLocality: "Aundh, Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411067",
+      addressCountry: "IN",
+    },
+    sameAs: [CONTACT_CONFIG.googleMapsUrl],
+  };
+
+  if (CONTACT_CONFIG.phoneRaw) {
+    orgData.contactPoint = {
+      "@type": "ContactPoint",
+      telephone: CONTACT_CONFIG.phoneRaw,
+      contactType: "customer service",
+      areaServed: "IN-MH",
+      availableLanguage: ["English", "Hindi", "Marathi"],
+    };
+  }
+
+  const localBusinessData: Record<string, any> = {
+    "@type": "LocalBusiness",
+    "@id": `${siteUrl}/#localbusiness`,
+    name: "Ranjeet Enterprises (20 ltr. water jar supplier pune)",
+    description:
+      "Bottled Drinking Water Supplier / 20 Litre Water Jar Delivery service located on DP Road, Aundh, Pune.",
+    image: `${siteUrl}/images/hero-jar-20l.jpg`,
+    hasMap: CONTACT_CONFIG.googleMapsUrl,
+    url: siteUrl,
+    priceRange: "₹₹",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "DP Road, Near Omkar Complex, Opposite Persona Furnishing, Shambhu Vihar Society",
+      addressLocality: "Aundh, Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411067",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 18.558,
+      longitude: 73.807,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
+    areaServed: ["Aundh", "Baner", "Khadki"],
+  };
+
+  if (CONTACT_CONFIG.phoneRaw) {
+    localBusinessData.telephone = CONTACT_CONFIG.phoneRaw;
+  }
+  if (CONTACT_CONFIG.email) {
+    localBusinessData.email = CONTACT_CONFIG.email;
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": `${siteUrl}/#organization`,
-        name: BRAND_CONFIG.name,
-        url: siteUrl,
-        logo: `${siteUrl}/brand/kalash-logo-full.png`,
-        slogan: BRAND_CONFIG.tagline,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: BRAND_CONFIG.market.city,
-          addressRegion: BRAND_CONFIG.market.state,
-          addressCountry: "IN",
-        },
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: CONTACT_CONFIG.phoneRaw,
-          contactType: "customer service",
-          areaServed: "IN-MH",
-          availableLanguage: ["English", "Hindi", "Marathi"],
-        },
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": `${siteUrl}/#localbusiness`,
-        name: `${BRAND_CONFIG.name} Drinking Water`,
-        image: `${siteUrl}/brand/kalash-hero-banner.jpg`,
-        telephone: CONTACT_CONFIG.phoneRaw,
-        email: CONTACT_CONFIG.email,
-        priceRange: "₹₹",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Pune",
-          addressRegion: "Maharashtra",
-          postalCode: "411038",
-          addressCountry: "IN",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: 18.5204,
-          longitude: 73.8567,
-        },
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-          ],
-          opens: "07:00",
-          closes: "20:30",
-        },
-        areaServed: CONTACT_CONFIG.serviceAreas,
-      },
-    ],
+    "@graph": [orgData, localBusinessData],
   };
 }
-

@@ -46,29 +46,25 @@ export default function CinematicIntro() {
         <span className="text-nature-leaf">EDITION 2026 // PUNE</span>
       </div>
 
-      {/* Center Cinematic Emblem & Shockwave */}
+      {/* Center Cinematic Wordmark & Shockwave */}
       <div className="flex flex-col items-center justify-center space-y-6 text-center my-auto">
-        <div className="relative w-44 sm:w-56 h-32 sm:h-40 cursor-pointer group" onClick={handleEnter}>
+        <div className="relative py-4 px-8 cursor-pointer group" onClick={handleEnter}>
           {/* Animated Glowing Shockwave Rings */}
           <div className="absolute inset-0 rounded-full border border-nature/30 animate-ping opacity-40" />
           <div className="absolute -inset-6 rounded-full border border-ocean-bright/20 animate-pulse-subtle" />
           <div className="absolute inset-0 bg-gradient-to-tr from-ocean-bright/30 to-nature/20 rounded-full blur-2xl" />
 
-          <Image
-            src="/brand/kalash-logo-white.png"
-            alt="KALASH Cinematic Reveal"
-            fill
-            priority
-            className="object-contain drop-shadow-[0_0_25px_rgba(21,108,212,0.6)] transition-transform duration-500 group-hover:scale-105"
-          />
+          <span className="relative z-10 font-serif text-4xl sm:text-6xl tracking-tight font-medium text-white select-none">
+            Ranjeet Enterprises
+          </span>
         </div>
 
         <div className="space-y-3">
           <p className="text-[11px] font-mono tracking-[0.4em] uppercase text-nature-leaf">
-            BEYOND THE DROP
+            20 LITRE WATER JAR DELIVERY
           </p>
           <h2 className="text-2xl sm:text-4xl font-light tracking-tight text-white leading-tight">
-            The Purest Element, <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-nature-leaf">Re-Imagined.</span>
+            Pure Hydration, <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-nature-leaf">Delivered with Reliability.</span>
           </h2>
         </div>
 

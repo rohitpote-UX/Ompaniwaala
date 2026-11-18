@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 /**
  * Luxury Circular Brand Seal / Quality Crest
  */
-export function KalashSeal({
+export function RanjeetSeal({
   className,
   size = 140,
 }: {
@@ -26,9 +26,9 @@ export function KalashSeal({
           d="M 100, 100 m -72, 0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"
           fill="none"
         />
-        <text className="text-[11.5px] font-sans font-medium uppercase tracking-[0.24em] fill-navy/70">
+        <text className="text-[11px] font-sans font-medium uppercase tracking-[0.24em] fill-navy/70">
           <textPath href="#sealCirclePath" startOffset="0%">
-            • KALASH PURE BY NATURE • PUNE HYDRATION • EST. 2018
+            • RANJEET ENTERPRISES • 20L WATER JAR SUPPLIER • AUNDH PUNE •
           </textPath>
         </text>
       </svg>
@@ -40,7 +40,7 @@ export function KalashSeal({
             viewBox="0 0 48 48"
             className="w-8 h-8 text-ocean fill-current"
           >
-            {/* Elegant Kalash Vessel + Water Droplet Vector */}
+            {/* Water Droplet & Vessel Vector */}
             <path d="M24 6 C20 12, 16 16, 16 22 C16 27.5, 19.5 31, 24 31 C28.5 31, 32 27.5, 32 22 C32 16, 28 12, 24 6 Z" fill="currentColor" opacity="0.9" />
             <path d="M12 28 C10 32, 14 38, 24 40 C34 38, 38 32, 36 28 C33 30, 29 32, 24 32 C19 32, 15 30, 12 28 Z" fill="currentColor" opacity="0.35" />
             {/* Leaves */}

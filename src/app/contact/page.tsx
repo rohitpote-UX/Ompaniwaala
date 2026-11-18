@@ -6,9 +6,9 @@ import { CONTACT_CONFIG } from "@/config/contact";
 import { MapPin, Phone, MessageSquare, Clock, Mail, ShieldCheck, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = generateSiteMetadata({
-  title: "Contact & Order Drinking Water — Pune Dispatch Desk",
+  title: "Contact & Order 20L Water Jars — Ranjeet Enterprises Aundh Pune",
   description:
-    "Order KALASH drinking water in Pune. Direct WhatsApp ordering, phone dispatch, and scheduling for homes, apartments, and corporate offices across Pune.",
+    "Order 20 litre drinking water jars from Ranjeet Enterprises in Aundh, Pune. Reliable water jar delivery for homes, offices and shops across Aundh, Baner, and Khadki. Open 24 hours.",
   path: "/contact",
 });
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
     },
     {
       q: "How does the 20L empty jar exchange work?",
-      a: "On your initial order, a standard refundable security deposit applies for the jar container. On subsequent orders, our delivery coordinator simply replaces your empty KALASH jar with a freshly sanitized, hermetically sealed one.",
+      a: "On your initial order, a standard refundable security deposit applies for the jar container. On subsequent orders, our delivery coordinator simply replaces your empty jar with a clean, inspected, securely sealed Ranjeet Enterprises 20L jar.",
     },
     {
       q: "Can we set up automated recurring deliveries?",

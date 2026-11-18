@@ -1,35 +1,35 @@
-# KALASH | Om Paaniwaala 💧
-### Premium Editorial Water Jar Supplier Platform
-**Primary Market:** Pune, Maharashtra, India  
-**Creative Standard:** Awwwards / FWA / Stellar Management Editorial Design  
+# RANJEET ENTERPRISES 💧
+### 20 Litre Water Jar Supplier & Delivery Platform — Aundh, Pune
+**Business Category:** Bottled Drinking Water Supplier / 20 Litre Water Jar Delivery  
+**Primary Market:** Aundh, Baner, Khadki • Pune, Maharashtra, India  
+**Creative Standard:** Awwwards / Editorial Design Language  
 
 ---
 
 ## Overview
 
-**KALASH | Om Paaniwaala** is a premium drinking water brand and 20L water jar supplier serving homes, corporate offices, and institutions across Pune. The web platform is designed with an editorial, image-led, high-contrast aesthetic featuring:
+**Ranjeet Enterprises** is a dedicated 20-litre drinking water jar supplier in Pune, operating from DP Road, Aundh. The website features an editorial, high-contrast digital experience crafted to present dependable local hydration:
 
-- **Dual-Video Ambient Hero (100vh)**: Seamlessly alternates between full-bleed city architecture and refreshing pure drink pours, complete with live switcher pill `[City View | Pure Pour]`, faststart MP4 streaming, and high-resolution posters.
-- **Editorial Navigation Bar**: Glassmorphic frosted header with scroll-direction detection (hides on scroll down, reveals on scroll up), brand signature `Kalash | Om paaniwaala`, interactive multi-level dropdowns, an Awwwards-style **Order Now** pill button with text-swap animation, and an architectural 3-line hamburger menu icon.
-- **Full-Screen Editorial Menu**: High-contrast, full-screen overlay with staggered clip-path line reveals and quick access to all Pune routes, services, and order desks.
-- **Centered Editorial Purity Statement**: Balanced "What We Do" statement with curated capsule imagery, botanical flourish vectors, and rotating quality crests.
-- **Interactive Delivery Areas**: 5 expandable locality panels (*Baner, Hinjawadi, Kharadi, Koregaon Park, Magarpatta*) with smooth flex-grow hover transitions.
-- **Key Operational Figures**: Animated stat counters highlighting 12,500+ daily deliveries, 45-minute timed slots, and 100% BIS/FSSAI-certified lab purity.
-- **Pinned Product Showcase**: ScrollTrigger-pinned product cards showcasing 20L Returnable Mineral Jars, Hot & Cold Floor Dispensers, and Packaged Mineral Bottles.
-- **Capabilities Workflow**: 4-step multi-barrier hygiene flow from 8-stage RO to touchless hermetic cap sealing.
-- **Editorial Footer**: 4-column spacious layout with full brand wordmark, Pune dispatch hub details, and direct WhatsApp / telephone booking.
+- **Dual-Video Ambient Hero (100vh)**: Seamlessly alternates between full-bleed city architecture and refreshing pure drink pour video tracks with faststart MP4 streaming and crisp poster frames.
+- **Bilingual Interface (English Primary & Marathi)**: Instant zero-reload language toggle (`[EN | मराठी]`) with Devanagari typography.
+- **Glassmorphic Navigation Bar**: Scroll-direction-aware header, brand wordmark (`Ranjeet | Enterprises`), multi-level interactive dropdowns, and an Awwwards-style **Order Now** pill button with vertical text-swap animation.
+- **Full-Screen Editorial Navigation**: High-contrast drawer with clip-path transition and quick access to all service areas, capabilities, and order desks.
+- **Confirmed Service Areas**: Dedicated 5-panel interactive showcase focusing on verified delivery routes across **Aundh**, **Baner**, and **Khadki** (with contact-to-confirm options for adjacent areas).
+- **Substantiated Business Metrics**: Highlighting listed **24-hour availability**, **12 Google business reviews**, **4.6★ customer rating**, and dedicated **20L water jars**.
+- **Verified Business Location**: Located at DP Road, Near Omkar Complex, Opposite Persona Furnishing, Shambhu Vihar Society, Aundh, Pune 411067.
+- **Editorial Footer**: 4-column layout with direct links to verified Google Business Profile, service routes, legal terms, and responsive contact options.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 15 (App Router, Server Components + Prerendered Static Content)
+- **Framework**: Next.js 15 (App Router, Server Components + Static Page Generation)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + Custom Design Tokens (Deep Navy `#0A1F33`, Aqua `#1FB5D6`, Off-white `#F6F8FA`)
-- **Typography**: Geometric Sans (`Plus Jakarta Sans`) paired with Luxury Editorial Serif Italic (`Cormorant Garamond`)
+- **Typography**: Geometric Sans (`Plus Jakarta Sans`) paired with Editorial Serif (`Cormorant Garamond`) and Devanagari (`Noto Sans Devanagari`)
 - **Animations & Smooth Scroll**: GSAP (ScrollTrigger, Flip), Lenis Smooth Scroll
 - **Media**: Faststart-optimized H.264 video streaming + WebP/AVIF imagery
-- **SEO & Structured Data**: Schema.org JSON-LD (`Organization`, `LocalBusiness`), OpenGraph, Twitter Cards
+- **SEO & Structured Data**: Schema.org JSON-LD (`Organization`, `LocalBusiness`), OpenGraph, Twitter Cards, Google Maps Profile integration
 
 ---
 
@@ -52,7 +52,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to experience the website.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### Production Build
 ```bash
@@ -65,18 +65,15 @@ npm run start -- -p 3000
 
 ---
 
-## 📍 Operational Configuration (Pune Hub)
+## 📍 Operational Configuration (Aundh, Pune Hub)
 
-Contact details, WhatsApp booking templates, and coverage areas are configured centrally in `src/config/brand.ts` and `src/config/contact.ts`.
-NEXT_PUBLIC_CONTACT_PHONE="+91 98220 00000"
-NEXT_PUBLIC_WHATSAPP_NUMBER="919822000000"
-NEXT_PUBLIC_CONTACT_EMAIL="orders@kalashwater.in"
+Contact details, WhatsApp order templates, and service routes are managed centrally in `src/config/brand.ts` and `src/config/contact.ts`, and can be customized via `.env.local` or Vercel Environment Variables:
+
+```env
+NEXT_PUBLIC_SITE_URL="https://ranjeetenterprises.in"
+NEXT_PUBLIC_CONTACT_PHONE="+91 98XXX XXXXX"
+NEXT_PUBLIC_CONTACT_PHONE_RAW="+9198XXXXXXXX"
+NEXT_PUBLIC_WHATSAPP_NUMBER="9198XXXXXXXX"
+NEXT_PUBLIC_CONTACT_EMAIL="orders@ranjeetenterprises.in"
+NEXT_PUBLIC_SUPPORT_EMAIL="care@ranjeetenterprises.in"
 ```
-
----
-
-## 📄 License & Credits
-
-- **Client**: KALASH Drinking Water, Pune, Maharashtra, India.
-- **Designed & Developed by**: [Goldspade — Forged for Founders](https://goldspade.in).
-

@@ -8,33 +8,33 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const PRODUCTS = [
   {
-    title: "20-Litre Returnable Jar",
-    accent: "Purity Sealed",
+    title: "20-Litre Drinking Water Jar",
+    accent: "Primary Supply",
     category: "Homes & Workplaces",
     description:
-      "BPA-free food-grade polycarbonate jar featuring hermetically sealed tamper-evident caps and multi-stage automated wash cycles.",
+      "Clean, sealed 20-litre drinking water jars delivered directly to homes, offices, and shops across Aundh, Baner, and Khadki.",
     image: "/images/hero-jar-20l.jpg",
-    specs: ["10-Stage Purification", "Ozonated Cap Seal", "Daily Morning Delivery"],
+    specs: ["Standard 20L Format", "Clean & Inspected Jars", "Doorstep Delivery"],
     href: "/contact",
   },
   {
-    title: "Smart Floor Dispenser",
-    accent: "Thermal Control",
-    category: "Corporate & Estates",
+    title: "Bulk & Corporate Supply",
+    accent: "Scheduled Service",
+    category: "Offices & Institutions",
     description:
-      "Heavy-duty stainless steel cooling and instant heating dispenser with integrated UV sanitization and complimentary monthly service.",
-    image: "/images/card-dispenser.jpg",
-    specs: ["Hot, Cold & Ambient", "Child Safety Lock", "Free Maintenance"],
+      "Regular scheduled batch supply of 20-litre water jars for corporate workstations, retail stores, educational facilities, and commercial offices.",
+    image: "/images/card-corporate.jpg",
+    specs: ["Multi-Jar Batch Supply", "Flexible Schedule", "Inquire for Setup"],
     href: "/contact",
   },
   {
-    title: "Packaged Natural Formats",
-    accent: "On-the-Go",
-    category: "Events & Boardrooms",
+    title: "Custom Delivery Schedules",
+    accent: "Flexible Route",
+    category: "Residential & Retail",
     description:
-      "Eco-conscious 500ml and 1L packaged mineral bottles for corporate events, board meetings, and daily conference hydration.",
-    image: "/images/hero-bottles-splash.jpg",
-    specs: ["Balanced Minerals", "Recyclable PET", "Bulk Carton Supply"],
+      "Choose daily morning drops, alternate-day supply, or on-demand replenishment based on your household or workplace water consumption.",
+    image: "/images/hero-delivery-supplier.jpg",
+    specs: ["Tailored Frequency", "Prompt Local Support", "Contact to Arrange"],
     href: "/contact",
   },
 ];
@@ -62,7 +62,7 @@ export default function FeaturedProducts() {
           </div>
 
           <p className="text-base sm:text-lg text-navy/70 max-w-md leading-relaxed font-normal">
-            Every format is engineered for absolute hygiene, dependable supply, and effortless setup for residential societies and corporate offices.
+            Focused on confirmed 20-litre drinking water jar supply, clean container handling, and prompt local delivery across Aundh, Baner, and Khadki.
           </p>
         </div>
 

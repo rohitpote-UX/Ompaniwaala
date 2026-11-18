@@ -3,7 +3,7 @@ export interface ProductItem {
   name: string;
   tagline: string;
   capacity: string;
-  category: "residential" | "commercial" | "on-the-go";
+  category: "residential" | "commercial" | "on-demand";
   description: string;
   features: string[];
   image: string;
@@ -13,70 +13,53 @@ export interface ProductItem {
 export const PRODUCTS_DATA: ProductItem[] = [
   {
     id: "20l-jar",
-    name: "KALASH 20-Litre Pure Water Jar",
-    tagline: "The Flagship Household & Office Vessel",
+    name: "20-Litre Drinking Water Jar",
+    tagline: "Primary Confirmed Supply for Homes & Workplaces",
     capacity: "20 Litres",
     category: "residential",
     description:
-      "Engineered for daily drinking water needs. Hermetically sealed with tamper-evident caps following multi-stage hygienic sanitization protocols.",
+      "Clean, sealed 20-litre water jars for daily domestic and office drinking water needs. Carefully handled, securely capped, and delivered directly to your doorstep in Aundh, Baner, and Khadki.",
     features: [
-      "BPA-free food-grade polymer container",
-      "Multi-stage automated interior & exterior wash",
-      "Tamper-proof safety seal on every cap",
-      "Scheduled doorstep replenishment in Pune",
+      "Standard 20-litre food-grade water jar",
+      "Thoroughly inspected & clean container",
+      "Hygienic tamper-evident cap seal",
+      "Doorstep delivery for homes, shops & offices",
     ],
-    image: "/brand/kalash-emblem.png",
-    badge: "Most Requested",
+    image: "/images/hero-jar-20l.jpg",
+    badge: "Primary Service",
   },
   {
-    id: "1l-bottle",
-    name: "KALASH 1000ml Packaged Water",
-    tagline: "Balanced Everyday Hydration",
-    capacity: "1000 ml",
-    category: "on-the-go",
-    description:
-      "Crisp, refreshing drinking water packaged for daily commutes, conferences, dining setups, and guest hospitality.",
-    features: [
-      "Ergonomic structural bottle design",
-      "Recyclable food-grade PET format",
-      "Clean neutral mineral balance",
-      "Bulk carton dispatch available for events",
-    ],
-    image: "/brand/kalash-logo-full.png",
-    badge: "Packaged Format",
-  },
-  {
-    id: "500ml-bottle",
-    name: "KALASH 500ml Compact Bottle",
-    tagline: "Active & Meeting Room Convenience",
-    capacity: "500 ml",
-    category: "on-the-go",
-    description:
-      "Compact format ideal for boardroom meetings, sports, travel kits, and corporate gatherings requiring individual hygienic portions.",
-    features: [
-      "Compact, pocket-friendly silhouette",
-      "Rigid grip with tamper-evident band",
-      "Optimal single-serving volume",
-      "Dispatched in sealed corrugated trays",
-    ],
-    image: "/brand/kalash-emblem.png",
-  },
-  {
-    id: "dispenser-station",
-    name: "KALASH Hygienic Tap Cradle",
-    tagline: "Effortless Countertop Dispensing",
-    capacity: "Compatible with 20L Jars",
+    id: "bulk-supply",
+    name: "Bulk & Corporate 20L Supply",
+    tagline: "Scheduled Volume Replenishment",
+    capacity: "20 Litres (Multi-Jar)",
     category: "commercial",
     description:
-      "Robust food-grade countertop stand with non-drip valve for smooth, zero-spill dispensing in modern kitchens and pantry areas.",
+      "Regular recurring delivery of 20L water jars for corporate offices, commercial shops, institutions, and workplaces across our Pune delivery areas.",
     features: [
-      "Rust-resistant stainless frame / food-grade stand",
-      "Precision flow fast-pour valve",
-      "Zero electricity required",
-      "Easy to detach, clean, and sanitize",
+      "Custom jar quantities per delivery",
+      "Consistent recurring dispatch schedule",
+      "Punctual morning service",
+      "Direct coordination for local businesses",
     ],
-    image: "/brand/kalash-logo-full.png",
-    badge: "Accessory",
+    image: "/images/card-dispenser.jpg",
+    badge: "Commercial Supply",
+  },
+  {
+    id: "custom-schedule",
+    name: "Custom Delivery Schedule",
+    tagline: "Flexible Delivery Frequency",
+    capacity: "Tailored Supply",
+    category: "on-demand",
+    description:
+      "Flexible delivery options including daily morning drops, alternate-day supply, or on-demand replenishment suited to your household or workplace water usage.",
+    features: [
+      "Daily or alternate-day options",
+      "Prompt customer service response",
+      "Service routes in Aundh, Baner & Khadki",
+      "Contact to confirm specific locality schedules",
+    ],
+    image: "/images/hero-delivery-supplier.jpg",
+    badge: "Flexible Service",
   },
 ];
-

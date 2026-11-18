@@ -7,7 +7,7 @@ import {
   PerspectiveCamera,
   OrbitControls,
 } from "@react-three/drei";
-import { KalashHeroArtifact } from "./WaterProduct";
+import { WaterHeroArtifact } from "./WaterProduct";
 import Image from "next/image";
 
 function LoadingSpinner() {
@@ -51,10 +51,10 @@ export default function HeroScene() {
       <div className="relative w-full h-full flex items-center justify-center p-8">
         <div className="relative w-64 md:w-80 h-80 md:h-96 animate-float-gentle">
           <Image
-            src="/brand/kalash-emblem.png"
-            alt="KALASH Pure Water Emblem"
+            src="/images/hero-jar-20l.jpg"
+            alt="Ranjeet Enterprises 20L Water Jar"
             fill
-            className="object-contain drop-shadow-2xl"
+            className="object-cover rounded-2xl drop-shadow-2xl"
             priority
           />
         </div>
@@ -105,7 +105,7 @@ export default function HeroScene() {
           />
 
           {/* Core Artifact Model */}
-          <KalashHeroArtifact />
+          <WaterHeroArtifact />
 
           {/* Soft Ground Contact Shadow */}
           <ContactShadows

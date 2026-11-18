@@ -16,20 +16,20 @@ export default function CtaBanner() {
         {/* Top Label */}
         <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/90 text-xs font-sans uppercase tracking-[0.16em]">
           <span className="w-1.5 h-1.5 rounded-full bg-aqua animate-pulse" />
-          <span>Immediate Route Activation</span>
+          <span>Aundh, Baner &amp; Khadki Dispatch</span>
         </div>
 
         {/* Master CTA Heading with Italic Accent */}
         <h2 className="text-[clamp(38px,5.8vw,80px)] font-sans font-medium text-white tracking-tight leading-[1.05] text-balance">
           Pure water for your family &amp; workplace. Delivered{" "}
           <span className="font-accent-italic font-normal italic text-sky inline-block">
-            fresh.
+            reliably.
           </span>
         </h2>
 
         {/* Subtitle */}
         <p className="mt-8 text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-normal text-balance">
-          Experience punctual recurring supply, sanitised food-grade 20L jars, and responsive customer service across Pune with zero delivery charges.
+          Experience punctual local supply, clean 20L water jars, and responsive customer service across Aundh, Baner, and Khadki.
         </p>
 
         {/* Action Buttons with Text-Swap */}
@@ -50,7 +50,7 @@ export default function CtaBanner() {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/25 text-white text-sm font-sans font-medium uppercase tracking-caps hover:bg-white/10 hover:border-white transition-all duration-300"
           >
             <MessageSquare className="w-4 h-4 text-aqua" />
-            <span>WhatsApp Quick Order</span>
+            <span>Inquire on WhatsApp</span>
           </a>
         </div>
       </div>

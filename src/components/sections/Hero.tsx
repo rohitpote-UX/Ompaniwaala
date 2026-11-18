@@ -117,13 +117,11 @@ export default function Hero() {
             {/* Quick Area Chips */}
             <div className="flex flex-wrap gap-2">
               {[
-                "Baner & Balewadi",
-                "Kothrud",
-                "Wakad & Hinjawadi",
                 "Aundh",
-                "Kalyani Nagar",
-                "Viman Nagar",
-                "Hadapsar",
+                "Baner",
+                "Khadki",
+                "Pashan (Contact to Confirm)",
+                "Other Pune Areas (Inquire)",
               ].map((area) => (
                 <button
                   key={area}

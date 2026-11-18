@@ -14,7 +14,7 @@ export default function AboutEditorial() {
           <div className="lg:col-span-6 relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/images/hero-delivery-supplier.jpg"
-              alt="KALASH Water Distribution Operations Pune"
+              alt="Ranjeet Enterprises 20L Water Jar Supplier Aundh Pune"
               fill
               sizes="(max-width: 1024px) 100vw, 650px"
               className="object-cover"
@@ -24,10 +24,10 @@ export default function AboutEditorial() {
             {/* Small corner badge */}
             <div className="absolute bottom-6 left-6 p-4 rounded-xl bg-white/95 backdrop-blur-md shadow-lg max-w-xs">
               <span className="text-[11px] font-sans uppercase tracking-[0.16em] text-navy/60 font-semibold block">
-                PUNE LOGISTICS HEADQUARTERS
+                AUNDH DISTRIBUTION HUB
               </span>
               <p className="mt-1 text-xs text-navy/80 font-medium leading-relaxed">
-                Over 12,500 families and corporate teams depend on our disciplined morning supply routes.
+                Serving residential societies and commercial offices across Aundh, Baner, and Khadki.
               </p>
             </div>
           </div>
@@ -40,18 +40,18 @@ export default function AboutEditorial() {
             </span>
 
             <h2 className="text-stellar-h2 font-sans font-medium text-navy tracking-tight leading-[1.08]">
-              A standard Pune families rely on every{" "}
+              Dependable water jar delivery Pune families rely on every{" "}
               <span className="font-accent-italic font-normal italic text-ocean">
-                morning
+                day
               </span>
             </h2>
 
             <div className="mt-8 space-y-6 text-base sm:text-lg text-navy/75 leading-relaxed font-normal">
               <p>
-                Founded in {BRAND_CONFIG.foundedYear}, KALASH was conceived with a single non-negotiable philosophy: drinking water is the foundation of daily vitality, and no home or business should ever compromise on purity or dependability.
+                Located on DP Road in Aundh, Ranjeet Enterprises is a dedicated 20-litre drinking water jar supplier in Pune. We are committed to providing clean water jars, prompt customer service, and dependable water supply for residential homes, corporate offices, and local businesses.
               </p>
               <p>
-                Unlike generic water suppliers, every single KALASH jar undergoes hospital-grade automated sanitization, multi-barrier purification, and touchless hermetic cap sealing before being dispatched on dedicated GPS-routed vehicles across Pune.
+                With confirmed delivery routes across Aundh, Baner, and Khadki, we ensure customers receive clean, sealed 20L water jars with courteous service and flexible delivery schedules tailored to their consumption.
               </p>
             </div>
 
@@ -59,18 +59,18 @@ export default function AboutEditorial() {
             <div className="mt-10 pt-8 border-t border-navy/10 grid grid-cols-2 gap-8">
               <div>
                 <span className="text-3xl sm:text-4xl font-sans font-semibold text-navy block">
-                  100%
+                  20L
                 </span>
                 <span className="mt-1 text-xs sm:text-sm text-navy/60 uppercase tracking-wider block font-medium">
-                  Food-Grade BPA-Free Jars
+                  Standard Water Jars
                 </span>
               </div>
               <div>
                 <span className="text-3xl sm:text-4xl font-sans font-semibold text-navy block">
-                  6:00 AM
+                  24 Hrs
                 </span>
                 <span className="mt-1 text-xs sm:text-sm text-navy/60 uppercase tracking-wider block font-medium">
-                  Guaranteed Daily Delivery
+                  Listed Availability
                 </span>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function AboutEditorial() {
                 size="lg"
                 showArrow
               >
-                Discover our heritage
+                About our service
               </PillButton>
             </div>
           </div>

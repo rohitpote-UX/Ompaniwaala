@@ -6,7 +6,7 @@ import { CONTACT_CONFIG } from "@/config/contact";
 
 export const metadata: Metadata = generateSiteMetadata({
   title: "Terms and Conditions of Supply",
-  description: "Terms and conditions of supply for KALASH drinking water deliveries in Pune, Maharashtra.",
+  description: "Terms and conditions of supply for Ranjeet Enterprises 20L water jar deliveries in Pune, Maharashtra.",
   path: "/terms",
 });
 
@@ -40,8 +40,8 @@ export default function TermsPage() {
             To maintain hygienic closed-loop container integrity:
           </p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>20-Litre jars remain the property of KALASH and are provided under a refundable container security deposit.</li>
-            <li>Customers agree to use returnable jars solely for KALASH drinking water and must not fill them with tap water, oil, chemicals, or foreign liquids.</li>
+            <li>20-Litre jars remain the property of Ranjeet Enterprises and are provided under a refundable container security deposit.</li>
+            <li>Customers agree to use returnable jars solely for Ranjeet Enterprises drinking water and must not fill them with tap water, oil, chemicals, or foreign liquids.</li>
             <li>Damaged or unreturned containers will forfeit the associated deposit value.</li>
           </ul>
 
@@ -49,7 +49,7 @@ export default function TermsPage() {
             3. Tamper-Evident Seals &amp; Acceptance
           </h2>
           <p>
-            Every KALASH jar and bottle is delivered with an intact, heat-sealed tamper-evident band. Customers are encouraged to inspect this seal upon delivery. If a seal shows evidence of damage or prior opening, the recipient should refuse acceptance immediately and our logistics desk will replace it free of charge.
+            Every Ranjeet Enterprises jar is delivered with an intact, heat-sealed tamper-evident band. Customers are encouraged to inspect this seal upon delivery. If a seal shows evidence of damage or prior opening, the recipient should refuse acceptance immediately and our logistics desk will replace it free of charge.
           </p>
 
           <h2 className="text-xl font-display font-semibold text-ocean mt-8 mb-3">

@@ -27,7 +27,7 @@ export default function BrandPhilosophy() {
 
           {/* Core Manifesto Paragraph */}
           <p className="text-subhead text-white/80 font-normal leading-relaxed max-w-3xl mx-auto">
-            KALASH is built around a simple belief: everyday essentials deserve care, consistency and a better experience. Drinking water is the silent catalyst of daily human health, quiet family moments, and productive workplaces.
+            Ranjeet Enterprises is built around a simple belief: everyday essentials deserve care, consistency and a better experience. Drinking water is the silent catalyst of daily human health, quiet family moments, and productive workplaces.
           </p>
 
           {/* 3 Core Tenets */}

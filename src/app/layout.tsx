@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Cormorant_Garamond } from "next/font/google";
+import { Plus_Jakarta_Sans, Cormorant_Garamond, Noto_Sans_Devanagari } from "next/font/google";
 import "@/styles/globals.css";
 import { generateSiteMetadata, getStructuredData } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -21,6 +22,13 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const notoSansDevanagari = Noto_Sans_Devanagari({
+  subsets: ["devanagari"],
+  variable: "--font-mr",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = generateSiteMetadata({});
 
 export default function RootLayout({
@@ -33,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${cormorant.variable} scroll-smooth`}
+      className={`${plusJakartaSans.variable} ${cormorant.variable} ${notoSansDevanagari.variable} scroll-smooth`}
     >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -44,13 +52,15 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white text-slate-800 antialiased selection:bg-ocean selection:text-white font-sans">
-        <SmoothScrollProvider>
-          <div className="flex min-h-screen flex-col relative overflow-x-hidden">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </SmoothScrollProvider>
+        <LanguageProvider>
+          <SmoothScrollProvider>
+            <div className="flex min-h-screen flex-col relative overflow-x-hidden">
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </SmoothScrollProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { BRAND_CONFIG } from "@/config/brand";
 import { ArrowUpRight } from "lucide-react";
 import PillButton from "@/components/ui/PillButton";
+import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
 
 export default function StellarHero() {
@@ -14,6 +15,7 @@ export default function StellarHero() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const sublineRef = useRef<HTMLParagraphElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   const videoCityRef = useRef<HTMLVideoElement>(null);
   const videoPourRef = useRef<HTMLVideoElement>(null);
@@ -137,7 +139,7 @@ export default function StellarHero() {
             )}
             aria-label="Switch to City Architecture Video"
           >
-            City View
+            {t.hero.cityView}
           </button>
           <button
             onClick={() => setActiveVideo("pour")}
@@ -149,7 +151,7 @@ export default function StellarHero() {
             )}
             aria-label="Switch to Pure Pour Video"
           >
-            Pure Pour
+            {t.hero.purePour}
           </button>
         </div>
       </div>
@@ -168,19 +170,19 @@ export default function StellarHero() {
             >
               <span className="block overflow-hidden py-0.5">
                 <span className="hero-line block will-change-transform">
-                  We deliver
+                  {t.hero.h1Line1}
                 </span>
               </span>
               <span className="block overflow-hidden py-0.5">
                 <span className="hero-line block will-change-transform">
-                  Pune&apos;s purest
+                  {t.hero.h1Line2}
                 </span>
               </span>
               <span className="block overflow-hidden py-0.5">
                 <span className="hero-line block will-change-transform">
-                  drinking{" "}
+                  {t.hero.h1Line3Normal}{" "}
                   <span className="font-accent-italic font-normal italic text-white/95 inline-block">
-                    water
+                    {t.hero.h1Line3Italic}
                   </span>
                 </span>
               </span>
@@ -191,7 +193,7 @@ export default function StellarHero() {
               ref={sublineRef}
               className="mt-6 sm:mt-7 text-white/85 text-[15px] sm:text-[16px] max-w-lg leading-relaxed font-normal"
             >
-              Since {BRAND_CONFIG.foundedYear}, purifying, bottling, distributing &amp; living dependable hydration across {BRAND_CONFIG.market.city}.
+              {t.hero.subline}
             </p>
           </div>
 
@@ -208,7 +210,7 @@ export default function StellarHero() {
               >
                 <Image
                   src="/images/card-corporate.jpg"
-                  alt="Pune Water Supply Team"
+                  alt="Ranjeet Enterprises 20L Water Jar Delivery Team"
                   fill
                   sizes="340px"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
@@ -221,10 +223,10 @@ export default function StellarHero() {
               {/* Card Meta & Title */}
               <div className="px-1 pt-1">
                 <span className="text-[11px] font-sans uppercase tracking-[0.14em] text-white/60 font-medium block">
-                  Daily Doorstep Supply
+                  {t.hero.cardTag}
                 </span>
                 <h3 className="mt-1 text-sm sm:text-[15px] font-medium text-white leading-snug">
-                  Hygienic 20L Water Jars Delivered Daily to Your Door
+                  {t.hero.cardTitle}
                 </h3>
               </div>
 
@@ -236,7 +238,7 @@ export default function StellarHero() {
                   size="md"
                   className="w-full text-center py-3.5 justify-center shadow-lg"
                 >
-                  Order now
+                  {t.hero.cardCta}
                 </PillButton>
               </div>
             </div>

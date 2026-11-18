@@ -7,7 +7,7 @@ import { BRAND_CONFIG } from "@/config/brand";
 import { Droplet, Sprout, Waves, Shield, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function KalashMeaning() {
+export function BrandPrinciples() {
   const [activeElement, setActiveElement] = useState<"vessel" | "droplet" | "leaves" | "flow">("vessel");
 
   const elements = [
@@ -49,9 +49,9 @@ export default function KalashMeaning() {
     <section id="meaning" className="section-padding bg-white relative overflow-hidden">
       <div className="container-custom">
         <SectionHeading
-          overline="Symbolic Heritage"
-          title="THE MEANING OF KALASH."
-          subtitle="The identity draws timeless inspiration from the Indian Kalash — a sacred vessel associated with water, life, abundance, and domestic wellness, re-imagined for modern everyday hydration."
+          overline="Service Foundation"
+          title="THE PRINCIPLES OF RANJEET ENTERPRISES."
+          subtitle="Operating from DP Road in Aundh, Ranjeet Enterprises is dedicated to providing clean water jars, prompt customer service, and reliable 20-litre water delivery across Pune."
           align="left"
         />
 
@@ -65,10 +65,10 @@ export default function KalashMeaning() {
 
               <div className="relative w-56 h-56 transition-transform duration-500 group-hover:scale-105">
                 <Image
-                  src="/brand/kalash-emblem.png"
-                  alt="KALASH Emblem Geometry"
+                  src="/images/hero-jar-20l.jpg"
+                  alt="Ranjeet Enterprises 20L Water Jars"
                   fill
-                  className="object-contain drop-shadow-md"
+                  className="object-cover rounded-2xl drop-shadow-md"
                 />
               </div>
 
@@ -129,4 +129,6 @@ export default function KalashMeaning() {
     </section>
   );
 }
+
+export default BrandPrinciples;
 

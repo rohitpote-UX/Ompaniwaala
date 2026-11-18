@@ -5,34 +5,33 @@ export interface NavItem {
 
 export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Our Story", href: "/our-story" },
+  { label: "Our Service", href: "/our-story" },
   { label: "Products", href: "/products" },
-  { label: "Approach", href: "/#approach" },
+  { label: "Capabilities", href: "/#capabilities" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const FOOTER_NAV_ITEMS = {
   narrative: [
-    { label: "The Kalash Story", href: "/our-story" },
-    { label: "Beyond The Drop", href: "/#story-of-drop" },
-    { label: "Symbol Anatomy", href: "/#meaning" },
-    { label: "Brand Philosophy", href: "/#philosophy" },
+    { label: "About Ranjeet Enterprises", href: "/our-story" },
+    { label: "Purity & Quality Standards", href: "/#capabilities" },
+    { label: "Delivery Workflow", href: "/#capabilities" },
+    { label: "Service Commitment", href: "/our-story#commitment" },
   ],
   offerings: [
-    { label: "20-Litre Jar Hydration", href: "/products#20l-jar" },
-    { label: "Pure Packaged Formats", href: "/products#packaged" },
-    { label: "Enterprise & Office Plans", href: "/products#workplaces" },
-    { label: "Custom Dispenser Systems", href: "/products#accessories" },
+    { label: "20-Litre Drinking Water Jars", href: "/products" },
+    { label: "Bulk & Corporate Supply", href: "/products" },
+    { label: "Residential Doorstep Delivery", href: "/products" },
+    { label: "Custom Supply Schedule", href: "/products" },
   ],
   logistics: [
-    { label: "Pune Service Hubs", href: "/contact#coverage" },
-    { label: "Delivery Schedules", href: "/contact#timing" },
-    { label: "Order Verification", href: "/contact#verify" },
-    { label: "Direct WhatsApp Line", href: "/contact#whatsapp" },
+    { label: "Aundh Service Hub", href: "/contact#coverage" },
+    { label: "Baner Delivery Route", href: "/contact#coverage" },
+    { label: "Khadki Service Route", href: "/contact#coverage" },
+    { label: "Google Business Profile", href: "https://www.google.com/maps/place/Ranjeet+enterprises+(20+ltr.+water+jar+supplier+pune)/" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Supply", href: "/terms" },
   ],
 };
-

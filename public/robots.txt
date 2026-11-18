@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kalashwater.in/sitemap.xml
+Sitemap: https://ranjeetenterprises.in/sitemap.xml
 

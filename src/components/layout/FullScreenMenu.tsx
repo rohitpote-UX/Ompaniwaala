@@ -2,30 +2,31 @@
 
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { BRAND_CONFIG } from "@/config/brand";
 import { CONTACT_CONFIG } from "@/config/contact";
-import { X, ArrowUpRight, Phone, MessageSquare } from "lucide-react";
+import { X, ArrowUpRight, Phone, MapPin } from "lucide-react";
 import PillButton from "@/components/ui/PillButton";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface FullScreenMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const MENU_LINKS = [
-  { number: "01", label: "About Us", href: "/our-story", accent: "Heritage" },
-  { number: "02", label: "Services & Products", href: "/products", accent: "20L Jars" },
-  { number: "03", label: "Delivery Areas", href: "/#delivery-areas", accent: "Pune Routes" },
-  { number: "04", label: "Our Capabilities", href: "/#capabilities", accent: "Hygienic Flow" },
-  { number: "05", label: "Customer Portal", href: "/contact", accent: "Orders" },
-];
-
 export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
+  const { lang, t } = useLanguage();
+
+  const menuLinks = [
+    { number: "01", label: lang === "mr" ? "आमच्याबद्दल" : "About Us", href: "/our-story", accent: lang === "mr" ? "औंध केंद्र" : "Aundh Hub" },
+    { number: "02", label: lang === "mr" ? "२०L वॉटर जार" : "20L Water Jars", href: "/products", accent: lang === "mr" ? "थेट पुरवठा" : "Direct Supply" },
+    { number: "03", label: lang === "mr" ? "वितरण क्षेत्रे" : "Delivery Routes", href: "/#delivery-areas", accent: lang === "mr" ? "औंध, बाणेर व खडकी" : "Aundh, Baner & Khadki" },
+    { number: "04", label: lang === "mr" ? "कार्यपद्धती" : "Service Workflow", href: "/#capabilities", accent: lang === "mr" ? "स्वच्छ जार व सील" : "Clean Jars & Seals" },
+    { number: "05", label: lang === "mr" ? "संपर्क व ऑर्डर्स" : "Contact & Orders", href: "/contact", accent: lang === "mr" ? "थेट समन्वय" : "Direct Dispatch" },
+  ];
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -92,16 +93,16 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
           href="/"
           onClick={onClose}
           className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
-          aria-label="Kalash | Om paaniwaala"
+          aria-label={`${BRAND_CONFIG.name} — 20 Litre Water Jar Supplier Pune`}
         >
           <span className="font-serif text-2xl sm:text-[28px] tracking-tight font-medium text-white transition-opacity group-hover:opacity-90 select-none">
-            Kalash
+            {t.nav.brandFirst}
           </span>
           <span className="text-white/35 font-light text-lg sm:text-xl select-none" aria-hidden="true">
             |
           </span>
           <span className="font-sans text-[11px] sm:text-[13px] font-normal tracking-[0.18em] uppercase text-white/80 group-hover:text-white transition-colors select-none">
-            Om paaniwaala
+            {t.nav.brandSecond}
           </span>
         </Link>
 
@@ -112,7 +113,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
             variant="aqua"
             size="sm"
           >
-            Order Now
+            {t.nav.orderNow}
           </PillButton>
 
           <button
@@ -120,7 +121,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
             className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:border-white text-xs font-mono tracking-caps uppercase text-white hover:bg-white/10 transition-all cursor-pointer"
             aria-label="Close Navigation Menu"
           >
-            <span>Close</span>
+            <span>{t.nav.close}</span>
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -131,7 +132,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
         ref={linksRef}
         className="w-full max-w-[1440px] mx-auto py-12 lg:py-16 flex flex-col justify-center space-y-4 lg:space-y-6"
       >
-        {MENU_LINKS.map((link) => (
+        {menuLinks.map((link) => (
           <div
             key={link.href}
             className="menu-link-row group flex items-baseline justify-between border-b border-white/10 pb-4 lg:pb-6"
@@ -163,19 +164,31 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
         className="w-full max-w-[1440px] mx-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs text-white/60 font-sans"
       >
         <div className="flex flex-wrap items-center gap-6">
-          <div className="flex items-center gap-2">
-            <Phone className="w-3.5 h-3.5 text-aqua" />
-            <a href={`tel:${CONTACT_CONFIG.phoneRaw}`} className="hover:text-white transition-colors">
-              {CONTACT_CONFIG.phone}
+          {CONTACT_CONFIG.phone ? (
+            <div className="flex items-center gap-2">
+              <Phone className="w-3.5 h-3.5 text-aqua" />
+              <a href={`tel:${CONTACT_CONFIG.phoneRaw}`} className="hover:text-white transition-colors">
+                {CONTACT_CONFIG.phone}
+              </a>
+            </div>
+          ) : (
+            <a
+              href={CONTACT_CONFIG.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white transition-colors"
+            >
+              <MapPin className="w-3.5 h-3.5 text-aqua" />
+              <span>DP Road, Aundh, Pune 411067</span>
             </a>
-          </div>
+          )}
           <div>
             <span>Pune Hub: {CONTACT_CONFIG.operatingHours}</span>
           </div>
         </div>
 
         <div className="text-[11px] font-mono tracking-caps uppercase text-white/40">
-          {BRAND_CONFIG.name} Drinking Water © {new Date().getFullYear()} • Pune, India
+          {BRAND_CONFIG.name} © {new Date().getFullYear()} • Aundh, Pune, India
         </div>
       </div>
     </div>

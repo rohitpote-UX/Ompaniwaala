@@ -6,7 +6,7 @@ import { CONTACT_CONFIG } from "@/config/contact";
 
 export const metadata: Metadata = generateSiteMetadata({
   title: "Privacy Policy",
-  description: "Privacy Policy and customer data protection principles for KALASH drinking water services in Pune.",
+  description: "Privacy Policy and customer data protection principles for Ranjeet Enterprises water jar services in Pune.",
   path: "/privacy",
 });
 

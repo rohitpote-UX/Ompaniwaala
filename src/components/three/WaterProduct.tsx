@@ -6,13 +6,13 @@ import { Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 import { sound } from "@/lib/audio";
 
-// Procedural 3D Kalash Vessel with Liquid Core, Bubbles, and Orbiting Droplets
-export function KalashHeroArtifact() {
+// Procedural 3D Pure Water Vessel with Liquid Core, Bubbles, and Orbiting Droplets
+export function WaterHeroArtifact() {
   const groupRef = useRef<THREE.Group>(null);
   const liquidRef = useRef<THREE.Mesh>(null);
   const bubblesRef = useRef<THREE.InstancedMesh>(null);
 
-  // 1. Vessel Profile (Lathe Geometry points forming the sacred Kalash shape)
+  // 1. Vessel Profile (Lathe Geometry points forming the water vessel shape)
   const { outerGeometry, innerLiquidGeometry } = useMemo(() => {
     // Outer glass profile
     const points: THREE.Vector2[] = [];
@@ -189,7 +189,7 @@ export function KalashHeroArtifact() {
         />
       </instancedMesh>
 
-      {/* 4. Glowing Sacred Core Light (The Living Energy of Kalash) */}
+      {/* 4. Glowing Sacred Core Light (The Living Energy of Pure Water) */}
       <pointLight position={[0, -0.2, 0]} intensity={2.8} distance={5} color="#39A96B" />
       <pointLight position={[0, 0.8, 0]} intensity={3.5} distance={6} color="#156CD4" />
 
@@ -260,9 +260,9 @@ export function KalashHeroArtifact() {
 }
 
 export function ProceduralWaterDrop() {
-  return <KalashHeroArtifact />;
+  return <WaterHeroArtifact />;
 }
 
 export function WaterProductModel() {
-  return <KalashHeroArtifact />;
+  return <WaterHeroArtifact />;
 }

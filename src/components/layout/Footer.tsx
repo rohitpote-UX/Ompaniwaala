@@ -19,7 +19,7 @@ export default function Footer() {
             <div>
               <Link href="/" className="inline-block focus:outline-none">
                 <span className="font-serif text-3xl sm:text-4xl tracking-tight font-medium text-white select-none">
-                  Kalash
+                  {BRAND_CONFIG.shortName}
                 </span>
               </Link>
               <p className="mt-4 text-sm sm:text-base text-white/70 max-w-sm leading-relaxed font-normal">
@@ -29,10 +29,10 @@ export default function Footer() {
 
             <div className="mt-8 pt-6 border-t border-white/10">
               <span className="text-[11px] font-sans uppercase tracking-[0.18em] text-white/50 font-semibold block">
-                PUNE OPERATIONAL HUB
+                AUNDH LOGISTICS HUB
               </span>
               <p className="mt-1 text-xs text-white/70">
-                {BRAND_CONFIG.market.address} • Pincodes: {BRAND_CONFIG.market.primaryPincodes}
+                {BRAND_CONFIG.market.address}
               </p>
             </div>
           </div>
@@ -44,10 +44,10 @@ export default function Footer() {
             </span>
             <ul className="space-y-3 pt-2">
               {[
-                { label: "Our Story", href: "/our-story" },
+                { label: "About Us", href: "/our-story" },
                 { label: "Capabilities", href: "/#capabilities" },
                 { label: "Delivery Routes", href: "/#delivery-areas" },
-                { label: "Customer Portal", href: "/contact" },
+                { label: "Contact Desk", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -61,17 +61,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Hydration Solutions (Col 7-9) */}
+          {/* Supply Solutions (Col 7-9) */}
           <div className="lg:col-span-3 space-y-4">
             <span className="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-white/50 block">
-              Solutions
+              Services
             </span>
             <ul className="space-y-3 pt-2">
               {[
-                { label: "20-Litre Returnable Jars", href: "/products" },
-                { label: "Smart Floor Dispensers", href: "/products" },
-                { label: "Corporate Daily Hydration", href: "/products" },
-                { label: "Packaged Mineral Bottles", href: "/products" },
+                { label: "20-Litre Water Jars", href: "/products" },
+                { label: "Bulk & Corporate Supply", href: "/products" },
+                { label: "Residential Doorstep Supply", href: "/products" },
+                { label: "Custom Supply Schedule", href: "/products" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -91,21 +91,28 @@ export default function Footer() {
               Direct Contact
             </span>
             <div className="space-y-3 pt-2 text-sm text-white/75">
-              <a
-                href={`tel:${CONTACT_CONFIG.phoneRaw}`}
-                className="flex items-center gap-3 hover:text-white transition-colors"
-              >
-                <Phone className="w-4 h-4 text-aqua shrink-0" />
-                <span>{CONTACT_CONFIG.phone}</span>
-              </a>
+              {CONTACT_CONFIG.phone ? (
+                <a
+                  href={`tel:${CONTACT_CONFIG.phoneRaw}`}
+                  className="flex items-center gap-3 hover:text-white transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-aqua shrink-0" />
+                  <span>{CONTACT_CONFIG.phone}</span>
+                </a>
+              ) : null}
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-aqua shrink-0" />
                 <span>{CONTACT_CONFIG.operatingHours}</span>
               </div>
-              <div className="flex items-start gap-3">
+              <a
+                href={CONTACT_CONFIG.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-white transition-colors group/map"
+              >
                 <MapPin className="w-4 h-4 text-aqua shrink-0 mt-0.5" />
-                <span>{CONTACT_CONFIG.hubLocation}</span>
-              </div>
+                <span className="group-hover/map:underline">{CONTACT_CONFIG.shortAddress}</span>
+              </a>
             </div>
           </div>
         </div>
@@ -121,7 +128,15 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Supply
             </Link>
-            <span>{BRAND_CONFIG.agency.name} — {BRAND_CONFIG.agency.tagline}</span>
+            <a
+              href={CONTACT_CONFIG.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors inline-flex items-center gap-1"
+            >
+              <span>Google Business Profile</span>
+              <ArrowUpRight className="w-3 h-3 text-aqua" />
+            </a>
           </div>
         </div>
       </div>

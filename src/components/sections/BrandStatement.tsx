@@ -9,7 +9,7 @@ export default function BrandStatement() {
       {/* Background Banner with Water Surface and Subtle Caustics */}
       <div className="absolute inset-0 opacity-25 mix-blend-overlay">
         <Image
-          src="/brand/kalash-hero-banner.jpg"
+          src="/images/water-ripple-crystal.jpg"
           alt="Water Ripple Reflections"
           fill
           className="object-cover"
@@ -29,20 +29,20 @@ export default function BrandStatement() {
         </div>
 
         <h2 className="text-hero font-light tracking-tight text-white leading-[0.95]">
-          PURE BY NATURE. <br />
+          PURE HYDRATION. <br />
           <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-nature-leaf">
-            TRUSTED FOR YOU.
+            DELIVERED WITH RELIABILITY.
           </span>
         </h2>
 
         <p className="text-subhead text-white/80 max-w-2xl mx-auto leading-relaxed">
-          From the sacred geometry of the ancient Kalash to the modern urban home in Pune, our commitment remains unyielding: bringing clarity, vitality, and dependability to every glass you pour.
+          From our distribution desk on DP Road in Aundh to your doorstep in Pune, our commitment remains unyielding: bringing clarity, punctuality, and dependability to every water jar delivered.
         </p>
 
         <div className="pt-4 flex items-center justify-center gap-3 text-xs tracking-widest uppercase text-white/60">
           <span>{BRAND_CONFIG.name}</span>
           <span>•</span>
-          <span>{BRAND_CONFIG.concept}</span>
+          <span>{BRAND_CONFIG.tagline}</span>
           <span>•</span>
           <span>{BRAND_CONFIG.market.city}</span>
         </div>

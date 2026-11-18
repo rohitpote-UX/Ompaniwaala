@@ -9,9 +9,9 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { Check, ShieldCheck, Truck, RefreshCw, MessageSquare, Phone } from "lucide-react";
 
 export const metadata: Metadata = generateSiteMetadata({
-  title: "Products & Formats — 20L Jars, Packaged Water & Accessories",
+  title: "20 Litre Water Jars & Delivery — Ranjeet Enterprises Pune",
   description:
-    "Explore KALASH premium drinking-water formats. Food-grade 20L jars, convenient packaged bottles, and ergonomic dispensing accessories delivered across Pune.",
+    "20 Litre drinking water jar supply and delivery for homes, offices and commercial businesses in Aundh, Baner, and Khadki, Pune by Ranjeet Enterprises. Open 24 hours.",
   path: "/products",
 });
 
@@ -24,19 +24,19 @@ export default function ProductsPage() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ocean-tint border border-ocean-light">
             <span className="w-2 h-2 rounded-full bg-nature animate-pulse-subtle" />
             <span className="text-xs font-semibold tracking-widest uppercase text-ocean">
-              Hydration Solutions
+              Water Supply Services
             </span>
           </div>
 
           <h1 className="text-hero font-light text-ocean tracking-tight leading-[0.96]">
-            DRINKING WATER <br />
+            20 LITRE WATER JARS &amp; <br />
             <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-ocean-deep via-ocean-medium to-nature-emerald">
-              PORTFOLIO.
+              SUPPLY SERVICES.
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed pt-2">
-            Engineered for daily domestic kitchens, corporate workstations, and active urban movement. Hygienically processed, hermetically sealed, and reliably delivered in Pune.
+            Dedicated supply of clean, sealed 20-litre drinking water jars for residential homes, corporate offices, and commercial establishments across Aundh, Baner, and Khadki.
           </p>
         </div>
       </div>

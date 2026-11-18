@@ -4,24 +4,24 @@ import React from "react";
 
 const STATS = [
   {
-    number: "12,500+",
-    label: "Jars Supplied Daily",
-    description: "Reliable drinking water routed across residential & corporate Pune.",
+    number: "24/7",
+    label: "Operating Availability",
+    description: "Listed as open 24 hours on Google Business Profile to support water needs.",
   },
   {
-    number: "100%",
-    label: "Automated Sanitization",
-    description: "Multi-stage medical grade purification without manual touch.",
+    number: "12",
+    label: "Google Business Reviews",
+    description: "Verified customer feedback and recommendations from local Pune clients.",
   },
   {
-    number: "45 Min",
-    label: "Scheduled Route Dispatch",
-    description: "Punctual morning deliveries before households start their day.",
+    number: "4.6★",
+    label: "Customer Rating",
+    description: "Rated on Google Business Profile for clean jars and prompt, courteous service.",
   },
   {
-    number: "99.8%",
-    label: "Customer Retention",
-    description: "Long-standing trust with corporate towers and housing societies.",
+    number: "20L",
+    label: "Dedicated Water Jars",
+    description: "Specialized in supplying standard hygienic 20-litre drinking water jars.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function KeyFigures() {
         <div className="mb-12 sm:mb-16">
           <span className="text-stellar-label text-navy/50 uppercase tracking-[0.2em] font-medium inline-flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-aqua" />
-            Performance &amp; Scale
+            Verified Profile &amp; Service
           </span>
         </div>
 

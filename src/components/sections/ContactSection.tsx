@@ -49,7 +49,7 @@ export default function ContactSection() {
     setStatus("submitting");
 
     // Construct WhatsApp order link as direct backup or instant redirect
-    const orderDetails = `*Order Inquiry for KALASH Drinking Water*%0A%0A*Name:* ${encodeURIComponent(
+    const orderDetails = `*Order Inquiry for Ranjeet Enterprises 20L Water Jars*%0A%0A*Name:* ${encodeURIComponent(
       formData.name
     )}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Pune Area:* ${encodeURIComponent(
       formData.serviceArea
@@ -68,9 +68,9 @@ export default function ContactSection() {
     <section id="contact" className="section-padding bg-white relative">
       <div className="container-custom">
         <SectionHeading
-          overline="Direct Supply & Ordering"
-          title="MAKE KALASH PART OF YOUR EVERYDAY."
-          subtitle="Choose the most convenient way to reach us. Whether via instant WhatsApp dispatch, a direct phone call, or our online scheduling form, our Pune team is ready to serve you."
+          overline="Direct Supply &amp; Ordering"
+          title="DEPENDABLE WATER JAR DELIVERY IN PUNE."
+          subtitle="Connect with Ranjeet Enterprises for reliable 20-litre drinking water jar supply across Aundh, Baner, and Khadki. Reach out via WhatsApp or visit our verified Google Business Profile."
           align="left"
         />
 
@@ -83,10 +83,10 @@ export default function ContactSection() {
                   Direct Immediate Actions
                 </span>
                 <h3 className="text-2xl font-display font-medium text-white">
-                  Fastest Way to Order
+                  Fastest Way to Inquire
                 </h3>
                 <p className="text-sm text-white/80 leading-relaxed">
-                  For immediate delivery requests, our dispatch coordinators respond directly on WhatsApp and phone during operational hours.
+                  For delivery inquiries in Aundh, Baner, and Khadki, connect directly with our coordination desk or view our verified location on Google Maps.
                 </p>
 
                 <div className="pt-2 space-y-3">
@@ -98,19 +98,32 @@ export default function ContactSection() {
                     className="w-full justify-center"
                     icon={MessageSquare}
                   >
-                    WhatsApp Us Directly
+                    Inquire on WhatsApp
                   </Button>
 
-                  <Button
-                    href={`tel:${CONTACT_CONFIG.phoneRaw}`}
-                    external
-                    variant="white"
-                    size="lg"
-                    className="w-full justify-center"
-                    icon={Phone}
-                  >
-                    Call {CONTACT_CONFIG.phone}
-                  </Button>
+                  {CONTACT_CONFIG.phone ? (
+                    <Button
+                      href={`tel:${CONTACT_CONFIG.phoneRaw}`}
+                      external
+                      variant="white"
+                      size="lg"
+                      className="w-full justify-center"
+                      icon={Phone}
+                    >
+                      Call {CONTACT_CONFIG.phone}
+                    </Button>
+                  ) : (
+                    <Button
+                      href={CONTACT_CONFIG.googleMapsUrl}
+                      external
+                      variant="white"
+                      size="lg"
+                      className="w-full justify-center"
+                      icon={MapPin}
+                    >
+                      View on Google Maps
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
@@ -119,7 +132,7 @@ export default function ContactSection() {
             <div className="p-8 rounded-3xl bg-surface-ice border border-slate-200/80 space-y-5">
               <h4 className="text-lg font-medium text-ocean flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-nature" />
-                <span>Pune Service Coordination</span>
+                <span>Aundh Service Hub</span>
               </h4>
 
               <div className="space-y-3 text-sm text-slate-600">
@@ -127,20 +140,15 @@ export default function ContactSection() {
                   <Clock className="w-4 h-4 text-ocean shrink-0" />
                   <span>{CONTACT_CONFIG.operatingHours}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 text-ocean shrink-0" />
-                  <a
-                    href={`mailto:${CONTACT_CONFIG.email}`}
-                    className="hover:text-ocean underline"
-                  >
-                    {CONTACT_CONFIG.email}
-                  </a>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-ocean shrink-0 mt-0.5" />
+                  <span>{CONTACT_CONFIG.address}</span>
                 </div>
               </div>
 
               <div className="pt-2 text-xs text-slate-500 border-t border-slate-200/60">
-                <p className="font-semibold text-ocean mb-1">Guaranteed Service Areas:</p>
-                <p>{CONTACT_CONFIG.serviceAreas.slice(0, 5).join(", ")}, and surrounding Pune zones.</p>
+                <p className="font-semibold text-ocean mb-1">Confirmed Service Areas:</p>
+                <p>Aundh, Baner, Khadki (contact to confirm adjacent localities).</p>
               </div>
             </div>
           </div>
@@ -224,7 +232,7 @@ export default function ContactSection() {
                       <input
                         type="tel"
                         required
-                        placeholder="+91 98220 00000"
+                        placeholder="+91 98XXX XXXXX"
                         value={formData.phone}
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })

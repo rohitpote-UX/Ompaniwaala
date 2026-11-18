@@ -8,44 +8,44 @@ import { cn } from "@/lib/utils";
 
 const DELIVERY_AREAS = [
   {
-    id: "baner",
-    name: "Baner & Kothrud",
-    tagline: "Residential towers & residential societies",
+    id: "aundh",
+    name: "Aundh",
+    tagline: "DP Road, Shambhu Vihar & residential societies",
     image: "/images/delivery-van-route.jpg",
-    pincodes: "411045, 411038",
-    timing: "Daily 6:30 AM – 11:00 AM",
+    pincodes: "411067",
+    timing: "Primary Hub • Daily Delivery",
   },
   {
-    id: "hinjawadi",
-    name: "Hinjawadi IT Park",
-    tagline: "Corporate campuses & tech hubs",
+    id: "baner",
+    name: "Baner",
+    tagline: "Baner Road, high-rises & commercial hubs",
     image: "/images/card-corporate.jpg",
-    pincodes: "411057",
-    timing: "Mon – Sat 7:00 AM – 2:00 PM",
+    pincodes: "411045",
+    timing: "Confirmed Area • Daily Delivery",
   },
   {
-    id: "kharadi",
-    name: "Kharadi & Viman Nagar",
-    tagline: "Commercial complexes & apartments",
+    id: "khadki",
+    name: "Khadki",
+    tagline: "Khadki cantonment & residential corridor",
     image: "/images/city-delivery-dusk.jpg",
-    pincodes: "411014",
-    timing: "Daily 6:00 AM – 10:30 AM",
+    pincodes: "411003",
+    timing: "Confirmed Area • Daily Delivery",
   },
   {
-    id: "koregaon",
-    name: "Koregaon Park & Kalyani",
-    tagline: "Cafes, boutiques & private estates",
+    id: "pashan",
+    name: "Pashan & University Area",
+    tagline: "Adjacent residential corridors",
     image: "/images/card-process.jpg",
-    pincodes: "411001, 411006",
-    timing: "Daily 7:00 AM – 12:00 PM",
+    pincodes: "411008",
+    timing: "Contact to Confirm Delivery",
   },
   {
-    id: "magarpatta",
-    name: "Magarpatta City & Hadapsar",
-    tagline: "Integrated townships & enterprises",
+    id: "corporate-pune",
+    name: "Corporate & Bulk Supply",
+    tagline: "Offices, institutions & bulk water orders",
     image: "/images/card-dispenser.jpg",
-    pincodes: "411028",
-    timing: "Daily 6:30 AM – 11:30 AM",
+    pincodes: "Pune Service Areas",
+    timing: "Contact for Scheduling",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function ExploreAreas() {
           </div>
 
           <p className="text-base sm:text-lg text-navy/70 max-w-md leading-relaxed font-normal">
-            Disciplined daily supply across Pune’s major residential societies, gated communities, and corporate IT corridors.
+            Confirmed daily delivery routes across Aundh, Baner, and Khadki. For other localities, contact our logistics desk to confirm availability.
           </p>
         </div>
 
